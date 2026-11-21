@@ -1,0 +1,2139 @@
+
+<!DOCTYPE html>
+<html lang="hi" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Arman AI Official — All-in-One Free AI & Smart Tools</title>
+  <meta name="description" content="Students, Instagram Creators और दोस्तों के लिए 100% फ्री स्मार्ट टूलबॉक्स — Magic AI Prompt, VIP Name & Bio और आतिशबाज़ी वाला Magic Birthday Wish!" />
+
+  <!-- Inline SVG Data-URL Favicon (Glowing Futuristic Emblem, No Base64) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2306B6D4'/%3E%3Cstop offset='50%25' stop-color='%238B5CF6'/%3E%3Cstop offset='100%25' stop-color='%23EC4899'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='18' fill='%2305050F'/%3E%3Crect x='3' y='3' width='58' height='58' rx='15' fill='none' stroke='url(%23g)' stroke-width='3'/%3E%3Cpath d='M32 10 L38 26 L54 32 L38 38 L32 54 L26 38 L10 32 L26 26 Z' fill='url(%23g)'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23FFFFFF'/%3E%3C/svg%3E" />
+
+  <!-- Google Fonts: Orbitron (Logo/Headings), Plus Jakarta Sans (UI), Noto Sans Devanagari (Hindi) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Orbitron:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            orbitron: ['Orbitron', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'Noto Sans Devanagari', 'sans-serif'],
+            hindi: ['Noto Sans Devanagari', 'Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            obsidian: '#05050F',
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* ============================================================
+       CORE THEME, GLASSMORPHISM & MAGICIAN'S TECH ROOM ANIMATIONS
+       ============================================================ */
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: #05050F;
+      color: #F8FAFC;
+    }
+
+    body {
+      background-color: #05050F;
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Devanagari', sans-serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* Subtle Cyber Grid Overlay */
+    .cyber-grid {
+      background-image:
+        linear-gradient(rgba(139, 92, 246, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(6, 182, 212, 0.045) 1px, transparent 1px);
+      background-size: 38px 38px;
+    }
+
+    /* Animated Ambient Glowing Orbs */
+    @keyframes floatOrb1 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(35px, -45px) scale(1.12); }
+      66% { transform: translate(-25px, 30px) scale(0.95); }
+    }
+    @keyframes floatOrb2 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(-40px, 35px) scale(1.08); }
+      66% { transform: translate(30px, -25px) scale(0.92); }
+    }
+    @keyframes floatOrb3 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(25px, 40px) scale(1.15); }
+    }
+    .orb-1 { animation: floatOrb1 14s ease-in-out infinite; }
+    .orb-2 { animation: floatOrb2 18s ease-in-out infinite; }
+    .orb-3 { animation: floatOrb3 16s ease-in-out infinite; }
+
+    /* Continuous Color-Shifting Logo Magic (Cyan -> Purple -> Pink -> Gold) */
+    @keyframes neonHueShift {
+      0% { filter: hue-rotate(0deg) drop-shadow(0 0 10px rgba(6, 182, 212, 0.75)); }
+      25% { filter: hue-rotate(90deg) drop-shadow(0 0 12px rgba(139, 92, 246, 0.85)); }
+      50% { filter: hue-rotate(180deg) drop-shadow(0 0 14px rgba(236, 72, 153, 0.85)); }
+      75% { filter: hue-rotate(270deg) drop-shadow(0 0 12px rgba(245, 158, 11, 0.85)); }
+      100% { filter: hue-rotate(360deg) drop-shadow(0 0 10px rgba(6, 182, 212, 0.75)); }
+    }
+    @keyframes slowSpin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .logo-magic-wrap {
+      animation: neonHueShift 7s linear infinite;
+    }
+    .logo-spin-ring {
+      animation: slowSpin 12s linear infinite;
+    }
+    .animated-gradient-text {
+      background: linear-gradient(90deg, #06B6D4, #A855F7, #EC4899, #F59E0B, #06B6D4);
+      background-size: 260% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: gradientFlow 5s linear infinite;
+    }
+    .animated-gradient-bg {
+      background: linear-gradient(120deg, #06B6D4, #8B5CF6, #EC4899, #F59E0B);
+      background-size: 250% 250%;
+      animation: gradientFlow 6s ease infinite;
+    }
+
+    /* Glassmorphism Cards */
+    .glass-card {
+      background: rgba(15, 16, 36, 0.62);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+    }
+
+    .tool-tab-active {
+      background: linear-gradient(145deg, rgba(139, 92, 246, 0.25), rgba(6, 182, 212, 0.16));
+      border-color: rgba(6, 182, 212, 0.75) !important;
+      box-shadow: 0 0 28px rgba(6, 182, 212, 0.25), inset 0 0 18px rgba(139, 92, 246, 0.15);
+    }
+
+    /* Smooth Panel Entry */
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .panel-animate {
+      animation: fadeSlideUp 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    /* Candle Flame Flicker for Birthday Cake */
+    @keyframes flicker {
+      0%, 100% { transform: scaleY(1) scaleX(1) rotate(-2deg); opacity: 1; }
+      25% { transform: scaleY(1.15) scaleX(0.92) rotate(2deg); opacity: 0.92; }
+      50% { transform: scaleY(0.92) scaleX(1.06) rotate(-1deg); opacity: 1; }
+      75% { transform: scaleY(1.1) scaleX(0.95) rotate(3deg); opacity: 0.95; }
+    }
+    .candle-flame {
+      transform-origin: center bottom;
+      animation: flicker 0.55s ease-in-out infinite;
+    }
+    .candle-flame-2 { animation-delay: 0.18s; }
+    .candle-flame-3 { animation-delay: 0.34s; }
+
+    /* Cake Gentle Float */
+    @keyframes cakeFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-7px); }
+    }
+    .cake-float {
+      animation: cakeFloat 3s ease-in-out infinite;
+    }
+
+    /* Floating Thank You Burst Particle */
+    @keyframes particlePop {
+      0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(0.4) rotate(0deg);
+      }
+      70% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        transform: translate(var(--tx), var(--ty)) scale(1.35) rotate(var(--rot));
+      }
+    }
+    .burst-particle {
+      position: fixed;
+      pointer-events: none;
+      z-index: 120;
+      font-size: 22px;
+      animation: particlePop 1.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #05050F; }
+    ::-webkit-scrollbar-thumb { background: rgba(139, 92, 246, 0.45); border-radius: 99px; }
+
+    /* Birthday Canvas Fullscreen */
+    #bdayCanvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      z-index: 1;
+      touch-action: manipulation;
+    }
+  </style>
+</head>
+
+<body class="text-slate-100 antialiased selection:bg-cyan-500/30 selection:text-cyan-200">
+
+  <!-- ============================================================
+       AMBIENT GLOWING NEON BACKGROUND (MAGICIAN'S TECH ROOM)
+       ============================================================ -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0 cyber-grid" aria-hidden="true">
+    <div class="orb-1 absolute -top-24 -left-24 w-80 h-80 sm:w-[28rem] sm:h-[28rem] rounded-full bg-purple-600/25 blur-[110px]"></div>
+    <div class="orb-2 absolute top-1/3 -right-24 w-72 h-72 sm:w-[26rem] sm:h-[26rem] rounded-full bg-cyan-500/20 blur-[110px]"></div>
+    <div class="orb-3 absolute -bottom-28 left-1/4 w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-pink-600/20 blur-[110px]"></div>
+    <div class="orb-1 absolute bottom-1/4 right-1/3 w-52 h-52 rounded-full bg-amber-500/15 blur-[95px]"></div>
+  </div>
+
+  <!-- ============================================================
+       FIRST-LOAD NEON WELCOME TOAST (Separate from Logo)
+       ============================================================ -->
+  <div id="welcomeToast" class="fixed top-20 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-md transition-all duration-500 opacity-0 -translate-y-6 pointer-events-none">
+    <div class="glass-card rounded-2xl p-3.5 border border-cyan-400/50 shadow-[0_0_30px_rgba(6,182,212,0.3)] flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2.5">
+        <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500/30 to-purple-600/30 border border-cyan-400/40 text-lg">✨</span>
+        <p class="text-sm font-semibold text-white leading-snug">
+          Arman AI Official में आपका दिल से स्वागत है!
+        </p>
+      </div>
+      <button id="closeWelcomeToast" type="button" aria-label="बंद करें" class="p-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition">
+        ✕
+      </button>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       GLOBAL ACTION TOAST (Copy / Share / Status Feedback)
+       ============================================================ -->
+  <div id="actionToast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[110] w-auto max-w-[92vw] transition-all duration-300 opacity-0 translate-y-4 pointer-events-none">
+    <div class="px-5 py-3 rounded-2xl bg-slate-900/95 border border-cyan-400/60 shadow-[0_0_25px_rgba(6,182,212,0.35)] text-sm font-semibold text-cyan-100 flex items-center gap-2 backdrop-blur-xl">
+      <span id="actionToastIcon">✅</span>
+      <span id="actionToastText">कॉपी हो गया!</span>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       1. TOP STICKY HEADER & COLOR-CHANGING ANIMATED LOGO
+       ============================================================ -->
+  <header class="sticky top-0 z-40 border-b border-white/10 bg-[#05050F]/80 backdrop-blur-xl">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
+      <!-- Animated Shifting Neon Logo -->
+      <a href="#top" class="flex items-center gap-3 group focus:outline-none">
+        <div class="logo-magic-wrap relative w-12 h-12 rounded-2xl p-[2px] bg-gradient-to-tr from-cyan-400 via-purple-500 to-pink-500 shrink-0">
+          <div class="w-full h-full rounded-[14px] bg-[#070716] flex items-center justify-center relative overflow-hidden">
+            <!-- Rotating Futuristic Ring -->
+            <svg class="logo-spin-ring absolute w-10 h-10 opacity-45" viewBox="0 0 48 48" fill="none">
+              <circle cx="24" cy="24" r="19" stroke="url(#ringGrad)" stroke-width="1.6" stroke-dasharray="6 5" />
+              <defs>
+                <linearGradient id="ringGrad" x1="0" y1="0" x2="48" y2="48">
+                  <stop offset="0%" stop-color="#06B6D4" />
+                  <stop offset="50%" stop-color="#A855F7" />
+                  <stop offset="100%" stop-color="#F59E0B" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <!-- Central Futuristic Spark Emblem -->
+            <svg class="w-7 h-7 relative z-10" viewBox="0 0 40 40" fill="none">
+              <path d="M20 4L24.2 15.8L36 20L24.2 24.2L20 36L15.8 24.2L4 20L15.8 15.8L20 4Z" fill="url(#sparkGrad)" />
+              <circle cx="20" cy="20" r="3.5" fill="#FFFFFF" />
+              <defs>
+                <linearGradient id="sparkGrad" x1="4" y1="4" x2="36" y2="36">
+                  <stop offset="0%" stop-color="#06B6D4" />
+                  <stop offset="50%" stop-color="#C084FC" />
+                  <stop offset="100%" stop-color="#F472B6" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Brand Text: "Arman AI" on top line, "Official" directly underneath -->
+        <div class="flex flex-col leading-none">
+          <span class="font-orbitron font-extrabold text-lg sm:text-xl tracking-wide animated-gradient-text">
+            Arman AI
+          </span>
+          <span class="mt-1 inline-flex items-center w-fit px-2 py-0.5 rounded-full text-[10px] font-orbitron font-bold uppercase tracking-[0.22em] text-cyan-200 bg-gradient-to-r from-cyan-500/20 via-purple-500/25 to-pink-500/20 border border-cyan-400/40 shadow-[0_0_12px_rgba(6,182,212,0.3)]">
+            Official
+          </span>
+        </div>
+      </a>
+
+      <!-- Right Header Badge -->
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-emerald-500/15 text-emerald-300 border border-emerald-400/30">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          100% FREE
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MAIN CONTENT CONTAINER
+       ============================================================ -->
+  <main id="top" class="relative z-10 max-w-5xl mx-auto px-4 pt-6 pb-14">
+
+    <!-- ==========================================================
+         2. HERO WELCOME BANNER + REAL-TIME LIVE SEARCH BAR
+         ========================================================== -->
+    <section class="text-center mb-8">
+      <!-- Glowing Welcome Pill Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-600/25 via-cyan-500/20 to-pink-500/25 border border-cyan-400/35 shadow-[0_0_24px_rgba(139,92,246,0.25)] mb-4 max-w-full">
+        <span class="text-xs sm:text-sm font-semibold text-cyan-100 leading-snug">
+          ✨ Welcome to Arman AI Official — आपका दिल से स्वागत है!
+        </span>
+      </div>
+
+      <!-- Main Futuristic Headline -->
+      <h1 class="font-orbitron font-extrabold text-2xl sm:text-4xl md:text-5xl tracking-tight leading-tight mb-3">
+        <span class="animated-gradient-text">All-in-One Free AI</span>
+        <span class="text-white"> &amp; Smart Tools</span>
+      </h1>
+
+      <!-- Clear Hindi/Hinglish Intro -->
+      <p class="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed mb-6">
+        Students, Instagram Creators और दोस्तों के लिए <span class="text-cyan-300 font-semibold">100% फ्री स्मार्ट टूलबॉक्स</span> — यहाँ हर टूल फ्री है, अपना काम आसान बनाएँ और जादू देखें!
+      </p>
+
+      <!-- Real-Time Live Search Bar -->
+      <div class="max-w-2xl mx-auto">
+        <div class="relative group">
+          <div class="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 opacity-35 group-focus-within:opacity-80 blur transition duration-300"></div>
+          <div class="relative flex items-center bg-[#0B0C1E] rounded-2xl border border-white/15 px-4 py-1">
+            <span class="text-cyan-400 text-lg mr-2.5" aria-hidden="true">🔍</span>
+            <input
+              id="liveSearchInput"
+              type="text"
+              autocomplete="off"
+              placeholder="क्या चाहिए? खोजें... (Prompt, Name, Bio, Birthday, YouTube, Shayari)"
+              class="w-full bg-transparent py-3 text-sm sm:text-base text-white placeholder-slate-400 focus:outline-none"
+            />
+            <button
+              id="clearSearchBtn"
+              type="button"
+              class="hidden ml-2 px-2.5 py-1 rounded-xl text-xs font-bold bg-white/10 text-slate-200 hover:bg-white/20 transition"
+              aria-label="सर्च साफ़ करें"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+
+        <!-- Dynamic Search Suggestions / Quick Filter Results -->
+        <div id="searchResultsBar" class="hidden mt-3 flex flex-wrap justify-center gap-2"></div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         3. 3 SHORTCUT TOOL CARDS (NO PERSON'S NAME IN TOOL TITLES)
+         ========================================================== -->
+    <section aria-label="Smart Tools Navigation" class="mb-7">
+      <div id="toolCardsGrid" class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+
+        <!-- Card 1: Magic AI Prompt -->
+        <button
+          type="button"
+          id="tab-prompt"
+          data-tool="prompt"
+          class="tool-tab-card tool-tab-active glass-card rounded-2xl p-4 text-left transition-all duration-300 hover:scale-[1.015] active:scale-[0.99] cursor-pointer flex sm:flex-col items-center sm:items-start gap-3.5"
+        >
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-500/30 to-blue-600/30 border border-cyan-400/40 flex items-center justify-center text-2xl shrink-0 shadow-[0_0_18px_rgba(6,182,212,0.25)]">
+            🤖
+          </div>
+          <div class="min-w-0">
+            <div class="font-orbitron font-bold text-base sm:text-lg text-white flex items-center gap-2">
+              Magic AI Prompt
+            </div>
+            <p class="text-xs sm:text-sm text-slate-300 mt-1 leading-snug">
+              बोलो क्या चाहिए, AI के लिए बेस्ट कमांड तैयार
+            </p>
+          </div>
+        </button>
+
+        <!-- Card 2: VIP Name & Bio -->
+        <button
+          type="button"
+          id="tab-namebio"
+          data-tool="namebio"
+          class="tool-tab-card glass-card rounded-2xl p-4 text-left transition-all duration-300 hover:scale-[1.015] hover:border-purple-400/50 active:scale-[0.99] cursor-pointer flex sm:flex-col items-center sm:items-start gap-3.5"
+        >
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-500/30 to-pink-600/30 border border-purple-400/40 flex items-center justify-center text-2xl shrink-0 shadow-[0_0_18px_rgba(168,85,247,0.25)]">
+            ✨
+          </div>
+          <div class="min-w-0">
+            <div class="font-orbitron font-bold text-base sm:text-lg text-white flex items-center gap-2">
+              VIP Name &amp; Bio
+            </div>
+            <p class="text-xs sm:text-sm text-slate-300 mt-1 leading-snug">
+              स्टाइलिश नाम, शायरी और इंस्टाग्राम बायो
+            </p>
+          </div>
+        </button>
+
+        <!-- Card 3: Magic Birthday Wish -->
+        <button
+          type="button"
+          id="tab-birthday"
+          data-tool="birthday"
+          class="tool-tab-card glass-card rounded-2xl p-4 text-left transition-all duration-300 hover:scale-[1.015] hover:border-amber-400/50 active:scale-[0.99] cursor-pointer flex sm:flex-col items-center sm:items-start gap-3.5 relative overflow-hidden"
+        >
+          <span class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-gradient-to-r from-amber-500 to-pink-500 text-white shadow">
+            🔥 Viral
+          </span>
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-500/30 to-pink-600/30 border border-amber-400/40 flex items-center justify-center text-2xl shrink-0 shadow-[0_0_18px_rgba(245,158,11,0.25)]">
+            🎂
+          </div>
+          <div class="min-w-0 pr-10 sm:pr-0">
+            <div class="font-orbitron font-bold text-base sm:text-lg text-white flex items-center gap-2">
+              Magic Birthday Wish
+            </div>
+            <p class="text-xs sm:text-sm text-slate-300 mt-1 leading-snug">
+              नाम डालो, आतिशबाज़ी वाला बर्थडे लिंक भेजो
+            </p>
+          </div>
+        </button>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         INTERACTIVE WORKSPACE PANELS
+         ========================================================== -->
+    <section id="workspaceContainer" class="mb-10">
+
+      <!-- ========================================================
+           PANEL 1: 🤖 MAGIC AI PROMPT
+           ======================================================== -->
+      <div id="panel-prompt" class="tool-panel panel-animate glass-card rounded-3xl p-5 sm:p-7 border border-cyan-400/25">
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-5 pb-4 border-b border-white/10">
+          <div>
+            <h2 class="font-orbitron font-bold text-xl sm:text-2xl text-white flex items-center gap-2">
+              <span>🤖</span> Magic AI Prompt
+            </h2>
+            <p class="text-xs sm:text-sm text-cyan-200/80 mt-1">
+              अपनी कैटेगरी और टॉपिक डालें — 1 क्लिक में प्रो-लेवल Master English Prompt पाएँ!
+            </p>
+          </div>
+          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-cyan-500/15 text-cyan-300 border border-cyan-400/30">
+            ChatGPT &amp; Gemini Ready
+          </span>
+        </div>
+
+        <!-- Step 1: Category Chips -->
+        <div class="mb-5">
+          <label class="block text-xs sm:text-sm font-bold text-slate-200 mb-2.5">
+            1. काम चुनें (Select Category):
+          </label>
+          <div id="promptCategoryChips" class="flex flex-wrap gap-2">
+            <!-- Populated cleanly via JS -->
+          </div>
+        </div>
+
+        <!-- Step 2: Topic Input -->
+        <div class="mb-5">
+          <label for="promptTopicInput" class="block text-xs sm:text-sm font-bold text-slate-200 mb-2">
+            2. आपका टॉपिक क्या है? (हिंदी, Hinglish या English में लिखें):
+          </label>
+          <input
+            id="promptTopicInput"
+            type="text"
+            placeholder="जैसे: जिम मोटिवेशन, चाय की दुकान का बिज़नेस, क्लास 10 साइंस नोट्स..."
+            class="w-full rounded-2xl bg-[#08091A] border border-white/15 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/25 px-4 py-3.5 text-sm sm:text-base text-white placeholder-slate-400 outline-none transition"
+          />
+          <!-- Quick Tap Examples -->
+          <div class="flex flex-wrap items-center gap-2 mt-2.5">
+            <span class="text-xs text-slate-400">उदाहरण चुनें:</span>
+            <button type="button" class="quick-topic-btn px-2.5 py-1 rounded-xl text-xs bg-white/5 hover:bg-cyan-500/20 border border-white/10 text-cyan-200 transition" data-topic="जिम मोटिवेशन और फिटनेस">जिम मोटिवेशन</button>
+            <button type="button" class="quick-topic-btn px-2.5 py-1 rounded-xl text-xs bg-white/5 hover:bg-cyan-500/20 border border-white/10 text-cyan-200 transition" data-topic="कम पैसों में चाय और नाश्ते की दुकान">चाय की दुकान</button>
+            <button type="button" class="quick-topic-btn px-2.5 py-1 rounded-xl text-xs bg-white/5 hover:bg-cyan-500/20 border border-white/10 text-cyan-200 transition" data-topic="साइबरपंक शहर में रोबोट और लड़का">AI फोटो सीन</button>
+            <button type="button" class="quick-topic-btn px-2.5 py-1 rounded-xl text-xs bg-white/5 hover:bg-cyan-500/20 border border-white/10 text-cyan-200 transition" data-topic="बोर्ड एग्जाम की स्मार्ट तैयारी">एग्जाम तैयारी</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Tone Selector -->
+        <div class="mb-6">
+          <label class="block text-xs sm:text-sm font-bold text-slate-200 mb-2.5">
+            3. अंदाज़ चुनें (Tone / Style):
+          </label>
+          <div id="promptToneChips" class="flex flex-wrap gap-2">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+
+        <!-- Generate Button -->
+        <button
+          id="generatePromptBtn"
+          type="button"
+          class="w-full py-4 px-6 rounded-2xl font-bold text-base sm:text-lg text-white animated-gradient-bg shadow-[0_0_28px_rgba(139,92,246,0.45)] hover:brightness-110 active:scale-[0.99] transition flex items-center justify-center gap-2"
+        >
+          <span>✨</span> Magic Prompt बनाएँ
+        </button>
+
+        <!-- Prompt Output Box -->
+        <div id="promptOutputSection" class="hidden mt-6 panel-animate">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs sm:text-sm font-bold text-emerald-300 flex items-center gap-1.5">
+              ⚡ आपका Master English Prompt तैयार है:
+            </span>
+            <span id="promptWordBadge" class="text-[11px] px-2.5 py-0.5 rounded-full bg-white/10 text-slate-300">Pro Grade</span>
+          </div>
+          <div class="relative rounded-2xl bg-[#070815] border border-cyan-400/35 p-4">
+            <pre id="promptOutputText" class="whitespace-pre-wrap font-sans text-xs sm:text-sm text-slate-100 leading-relaxed max-h-80 overflow-y-auto"></pre>
+          </div>
+          <!-- Action Buttons -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
+            <button
+              id="copyPromptBtn"
+              type="button"
+              class="py-3.5 px-5 rounded-2xl font-bold text-sm sm:text-base bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-400/50 text-cyan-100 transition active:scale-[0.98] flex items-center justify-center gap-2"
+            >
+              📋 1-Click Copy
+            </button>
+            <button
+              id="openChatGPTBtn"
+              type="button"
+              class="py-3.5 px-5 rounded-2xl font-bold text-sm sm:text-base bg-gradient-to-r from-emerald-500 to-teal-500 hover:brightness-110 text-white shadow-[0_0_20px_rgba(16,185,129,0.35)] transition active:scale-[0.98] flex items-center justify-center gap-2"
+            >
+              🚀 Open in ChatGPT
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========================================================
+           PANEL 2: ✨ VIP NAME & BIO
+           ======================================================== -->
+      <div id="panel-namebio" class="tool-panel hidden panel-animate glass-card rounded-3xl p-5 sm:p-7 border border-purple-400/25">
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-5 pb-4 border-b border-white/10">
+          <div>
+            <h2 class="font-orbitron font-bold text-xl sm:text-2xl text-white flex items-center gap-2">
+              <span>✨</span> VIP Name &amp; Bio
+            </h2>
+            <p class="text-xs sm:text-sm text-purple-200/80 mt-1">
+              अपना नाम लिखें — 18+ VIP स्टाइलिश फोंट और धमाकेदार Instagram Bio तुरंत पाएँ!
+            </p>
+          </div>
+        </div>
+
+        <!-- Shared Name Input (Automatically personalizes both Fonts & Bios!) -->
+        <div class="mb-5">
+          <label for="vipNameInput" class="block text-xs sm:text-sm font-bold text-slate-200 mb-2">
+            अपना नाम या शब्द लिखें (English में लिखने पर सभी VIP Fonts शानदार दिखेंगे):
+          </label>
+          <div class="relative">
+            <input
+              id="vipNameInput"
+              type="text"
+              value="Royal King"
+              maxlength="40"
+              placeholder="अपना नाम लिखें (जैसे: Arman, Rahul, Priya)..."
+              class="w-full rounded-2xl bg-[#08091A] border border-white/15 focus:border-purple-400 focus:ring-2 focus:ring-purple-400/25 px-4 py-3.5 pr-12 text-base font-semibold text-white placeholder-slate-400 outline-none transition"
+            />
+            <button
+              id="clearVipNameBtn"
+              type="button"
+              class="absolute right-3 top-1/2 -translate-y-1/2 px-2.5 py-1 rounded-xl text-xs font-bold bg-white/10 text-slate-300 hover:bg-white/20 transition"
+              title="साफ़ करें"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+
+        <!-- Sub-Tabs inside Tool 2 -->
+        <div class="grid grid-cols-2 gap-2.5 p-1.5 rounded-2xl bg-[#070815] border border-white/10 mb-6">
+          <button
+            type="button"
+            id="subtab-fonts"
+            class="subtab-btn py-3 px-3 rounded-xl font-bold text-xs sm:text-sm transition bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg"
+          >
+            🔤 Stylish Name Fonts
+          </button>
+          <button
+            type="button"
+            id="subtab-bios"
+            class="subtab-btn py-3 px-3 rounded-xl font-bold text-xs sm:text-sm transition text-slate-300 hover:text-white hover:bg-white/5"
+          >
+            🔥 Instagram Bio &amp; Shayari
+          </button>
+        </div>
+
+        <!-- Sub-Tab A: 18+ Unicode Fancy Fonts -->
+        <div id="subpanel-fonts" class="panel-animate">
+          <div id="fontsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <!-- Dynamically rendered via JS -->
+          </div>
+        </div>
+
+        <!-- Sub-Tab B: Instagram Bio & Shayari -->
+        <div id="subpanel-bios" class="hidden panel-animate">
+          <div class="mb-4">
+            <label class="block text-xs sm:text-sm font-bold text-slate-200 mb-2.5">
+              अपना मूड चुनें (Select Mood):
+            </label>
+            <div id="bioMoodChips" class="flex flex-wrap gap-2">
+              <!-- Dynamically populated via JS -->
+            </div>
+          </div>
+          <div id="biosList" class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+            <!-- Dynamically populated via JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- ========================================================
+           PANEL 3: 🎂 MAGIC BIRTHDAY WISH (STAR VIRAL FEATURE)
+           ======================================================== -->
+      <div id="panel-birthday" class="tool-panel hidden panel-animate glass-card rounded-3xl p-5 sm:p-7 border border-amber-400/30">
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-5 pb-4 border-b border-white/10">
+          <div>
+            <h2 class="font-orbitron font-bold text-xl sm:text-2xl text-white flex items-center gap-2">
+              <span>🎂</span> Magic Birthday Wish
+            </h2>
+            <p class="text-xs sm:text-sm text-amber-200/85 mt-1">
+              दोस्त का नाम डालो — असली आतिशबाज़ी, नीयन केक और बर्थडे म्यूज़िक वाला मैजिक लिंक तैयार!
+            </p>
+          </div>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-400/40">
+            🎆 Live Fireworks + Music
+          </span>
+        </div>
+
+        <!-- Inputs -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+          <div>
+            <label for="bdayToInput" class="block text-xs sm:text-sm font-bold text-slate-200 mb-2">
+              🎉 जिसका बर्थडे है उसका नाम (Birthday Person):
+            </label>
+            <input
+              id="bdayToInput"
+              type="text"
+              maxlength="35"
+              placeholder="जैसे: राहुल, प्रिया, अमन..."
+              class="w-full rounded-2xl bg-[#08091A] border border-white/15 focus:border-amber-400 focus:ring-2 focus:ring-amber-400/25 px-4 py-3.5 text-sm sm:text-base text-white placeholder-slate-400 outline-none transition"
+            />
+          </div>
+          <div>
+            <label for="bdayFromInput" class="block text-xs sm:text-sm font-bold text-slate-200 mb-2">
+              ❤️ आपका नाम (Sender's Name):
+            </label>
+            <input
+              id="bdayFromInput"
+              type="text"
+              maxlength="35"
+              placeholder="जैसे: आपका नाम..."
+              class="w-full rounded-2xl bg-[#08091A] border border-white/15 focus:border-amber-400 focus:ring-2 focus:ring-amber-400/25 px-4 py-3.5 text-sm sm:text-base text-white placeholder-slate-400 outline-none transition"
+            />
+          </div>
+        </div>
+
+        <!-- Optional Custom Wish -->
+        <div class="mb-5">
+          <label for="bdayMsgInput" class="block text-xs sm:text-sm font-bold text-slate-200 mb-2">
+            💌 खास बधाई संदेश (Optional — खाली छोड़ने पर बेस्ट विश अपने आप लगेगी):
+          </label>
+          <textarea
+            id="bdayMsgInput"
+            rows="2"
+            maxlength="180"
+            placeholder="जैसे: भगवान करे तुम्हारे सारे सपने पूरे हों और ज़िंदगी हमेशा खुशियों से भरी रहे! ✨"
+            class="w-full rounded-2xl bg-[#08091A] border border-white/15 focus:border-amber-400 focus:ring-2 focus:ring-amber-400/25 px-4 py-3 text-sm text-white placeholder-slate-400 outline-none transition resize-none"
+          ></textarea>
+        </div>
+
+        <!-- Theme Selector (3 Clickable Theme Cards) -->
+        <div class="mb-6">
+          <label class="block text-xs sm:text-sm font-bold text-slate-200 mb-2.5">
+            🎨 बर्थडे मैजिक थीम चुनें (Choose Theme):
+          </label>
+          <div id="bdayThemeCards" class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <!-- Theme 1: Royal Gold -->
+            <button
+              type="button"
+              data-theme="gold"
+              class="bday-theme-card rounded-2xl p-3.5 text-left border-2 border-amber-400 bg-gradient-to-br from-amber-500/20 via-yellow-900/20 to-[#0B0C1E] shadow-[0_0_20px_rgba(245,158,11,0.28)] transition"
+            >
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-xl">👑</span>
+                <span class="flex gap-1">
+                  <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+                  <span class="w-3 h-3 rounded-full bg-yellow-200"></span>
+                  <span class="w-3 h-3 rounded-full bg-indigo-900 border border-white/30"></span>
+                </span>
+              </div>
+              <div class="font-bold text-sm text-amber-200">Royal Gold Fireworks</div>
+              <p class="text-[11px] text-slate-300 mt-0.5">शाही सुनहरी आतिशबाज़ी</p>
+            </button>
+
+            <!-- Theme 2: Neon Cyber -->
+            <button
+              type="button"
+              data-theme="neon"
+              class="bday-theme-card rounded-2xl p-3.5 text-left border border-white/15 bg-gradient-to-br from-cyan-500/15 via-purple-600/15 to-[#0B0C1E] hover:border-cyan-400/60 transition"
+            >
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-xl">⚡</span>
+                <span class="flex gap-1">
+                  <span class="w-3 h-3 rounded-full bg-cyan-400"></span>
+                  <span class="w-3 h-3 rounded-full bg-purple-500"></span>
+                  <span class="w-3 h-3 rounded-full bg-pink-500"></span>
+                </span>
+              </div>
+              <div class="font-bold text-sm text-cyan-200">Neon Cyber Party</div>
+              <p class="text-[11px] text-slate-300 mt-0.5">रंगीन नीयन पार्टी नाइट</p>
+            </button>
+
+            <!-- Theme 3: Heart & Rose -->
+            <button
+              type="button"
+              data-theme="rose"
+              class="bday-theme-card rounded-2xl p-3.5 text-left border border-white/15 bg-gradient-to-br from-rose-600/20 via-pink-600/15 to-[#0B0C1E] hover:border-pink-400/60 transition"
+            >
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-xl">🌹</span>
+                <span class="flex gap-1">
+                  <span class="w-3 h-3 rounded-full bg-rose-500"></span>
+                  <span class="w-3 h-3 rounded-full bg-pink-300"></span>
+                  <span class="w-3 h-3 rounded-full bg-red-600"></span>
+                </span>
+              </div>
+              <div class="font-bold text-sm text-pink-200">Heart &amp; Rose Magic</div>
+              <p class="text-[11px] text-slate-300 mt-0.5">खास लोगों के लिए दिल और गुलाब</p>
+            </button>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="space-y-3">
+          <button
+            id="previewBdayBtn"
+            type="button"
+            class="w-full py-4 px-6 rounded-2xl font-bold text-base sm:text-lg text-white bg-gradient-to-r from-amber-500 via-pink-500 to-purple-600 shadow-[0_0_30px_rgba(236,72,153,0.45)] hover:brightness-110 active:scale-[0.99] transition flex items-center justify-center gap-2"
+          >
+            🎆 Live Magic Preview देखें
+          </button>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <button
+              id="whatsappBdayBtn"
+              type="button"
+              class="py-3.5 px-5 rounded-2xl font-bold text-sm sm:text-base bg-gradient-to-r from-emerald-500 to-green-600 hover:brightness-110 text-white shadow-[0_0_20px_rgba(16,185,129,0.3)] active:scale-[0.98] transition flex items-center justify-center gap-2"
+            >
+              📲 WhatsApp पर मैजिक लिंक भेजें
+            </button>
+            <button
+              id="copyBdayLinkBtn"
+              type="button"
+              class="py-3.5 px-5 rounded-2xl font-bold text-sm sm:text-base bg-white/10 hover:bg-white/15 border border-white/20 text-white active:scale-[0.98] transition flex items-center justify-center gap-2"
+            >
+              🔗 Magic Link कॉपी करें
+            </button>
+          </div>
+        </div>
+
+        <!-- Tip Box -->
+        <div class="mt-4 rounded-2xl bg-amber-500/10 border border-amber-400/25 p-3.5 text-xs text-amber-100/90 leading-relaxed">
+          💡 <strong>प्रो टिप:</strong> जब आपका दोस्त यह मैजिक लिंक खोलेगा, तो उसके फोन में सीधे उसी के नाम की <strong>आतिशबाज़ी और बर्थडे म्यूज़िक</strong> चालू हो जाएगी! आप इसकी स्क्रीन रिकॉर्डिंग करके Instagram Story पर भी लगा सकते हैं।
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ==========================================================
+         4. INTERACTIVE THANK YOU SECTION (ABOVE FOOTER)
+         ========================================================== -->
+    <section class="mb-10">
+      <div class="relative rounded-3xl p-[1.5px] animated-gradient-bg shadow-[0_0_35px_rgba(139,92,246,0.22)]">
+        <div class="rounded-[22px] bg-[#090A1B]/95 backdrop-blur-xl px-5 py-7 sm:p-8 text-center">
+          <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-500/25 to-purple-600/25 border border-pink-400/40 text-3xl mb-3 shadow-[0_0_20px_rgba(236,72,153,0.3)]">
+            🙏
+          </div>
+          <h2 class="font-orbitron font-bold text-lg sm:text-2xl text-white mb-2">
+            Thank You for Visiting! — <span class="text-cyan-300">दिल से धन्यवाद!</span>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto mb-5 leading-relaxed">
+            अपना कीमती समय देने के लिए बहुत-बहुत शुक्रिया। उम्मीद है हमारे टूल्स आपके काम आए होंगे!
+          </p>
+          <button
+            id="thankYouBtn"
+            type="button"
+            class="px-6 py-3.5 rounded-2xl font-bold text-sm sm:text-base text-white bg-gradient-to-r from-pink-600 via-purple-600 to-cyan-600 hover:brightness-110 active:scale-95 transition-all duration-300 shadow-[0_0_24px_rgba(236,72,153,0.45)]"
+          >
+            ❤️ धन्यवाद स्वीकार करें (Tap Me)
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         5. BOTTOM FOOTER (SHARE BUTTON + ARMAN CREDIT)
+         ========================================================== -->
+    <footer class="glass-card rounded-3xl p-6 text-center border border-white/10">
+      <p class="text-xs sm:text-sm text-slate-300 mb-4">
+        क्या आपको यह फ्री स्मार्ट टूलबॉक्स पसंद आया? अपने दोस्तों के साथ ज़रूर शेयर करें! 🚀
+      </p>
+      <button
+        id="shareSiteWhatsAppBtn"
+        type="button"
+        class="w-full sm:w-auto px-7 py-3.5 rounded-2xl font-bold text-sm sm:text-base text-white bg-gradient-to-r from-emerald-500 via-green-500 to-teal-500 hover:brightness-110 active:scale-[0.98] transition shadow-[0_0_24px_rgba(16,185,129,0.4)] inline-flex items-center justify-center gap-2 mb-6"
+      >
+        📲 WhatsApp पर दोस्तों को शेयर करें
+      </button>
+
+      <div class="pt-5 border-t border-white/10 space-y-1.5">
+        <p class="text-xs sm:text-sm font-bold text-white tracking-wide">
+          Designed &amp; Built by <span class="animated-gradient-text font-orbitron">Arman</span> | Arman AI Official
+        </p>
+        <p class="text-[11px] text-slate-400">
+          © 2026 All Rights Reserved • Made with ❤️ for Creators &amp; Dreamers
+        </p>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- ============================================================
+       FULL-SCREEN SURPRISE BIRTHDAY SHOW OVERLAY
+       (Instagram Story Friendly + Live Canvas Fireworks + Music)
+       ============================================================ -->
+  <div id="bdayOverlay" class="hidden fixed inset-0 z-[100] overflow-y-auto overflow-x-hidden flex flex-col justify-between bg-[#05050F]">
+    <!-- Live Multi-Color Fireworks & Particles Canvas -->
+    <canvas id="bdayCanvas"></canvas>
+
+    <!-- Top Controls Bar -->
+    <div class="relative z-10 w-full max-w-lg mx-auto px-4 pt-4 flex items-center justify-between gap-2">
+      <button
+        id="bdayMusicToggle"
+        type="button"
+        class="px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-bold bg-black/55 hover:bg-black/75 border border-white/25 text-white backdrop-blur-md shadow-lg transition active:scale-95 flex items-center gap-2"
+      >
+        🔊 म्यूज़िक चलाएँ
+      </button>
+      <button
+        id="bdayCloseBtn"
+        type="button"
+        aria-label="बंद करें"
+        class="w-10 h-10 rounded-2xl bg-black/55 hover:bg-black/75 border border-white/25 text-white backdrop-blur-md flex items-center justify-center text-base font-bold transition active:scale-95"
+      >
+        ✕
+      </button>
+    </div>
+
+    <!-- Center Vertical Story-Friendly Celebration Card -->
+    <div class="relative z-10 w-full max-w-md mx-auto px-5 py-4 flex flex-col items-center text-center my-auto pointer-events-none">
+
+      <!-- Interactive Glowing Neon Birthday Cake (Tap for Mega Firework!) -->
+      <button
+        id="bdayCakeBtn"
+        type="button"
+        aria-label="केक पर टच करें"
+        class="cake-float pointer-events-auto mb-3 p-2 rounded-full focus:outline-none active:scale-90 transition-transform cursor-pointer"
+        title="केक पर टच करें!"
+      >
+        <svg class="w-40 h-40 sm:w-44 sm:h-44 drop-shadow-[0_0_24px_rgba(245,158,11,0.55)]" viewBox="0 0 200 200" fill="none">
+          <!-- Soft Glow Aura -->
+          <circle cx="100" cy="112" r="72" fill="url(#cakeAura)" opacity="0.35" />
+
+          <!-- Candles -->
+          <rect x="68" y="48" width="10" height="30" rx="4" fill="#38BDF8" stroke="#E0F2FE" stroke-width="1.5" />
+          <rect x="95" y="40" width="10" height="38" rx="4" fill="#F472B6" stroke="#FCE7F3" stroke-width="1.5" />
+          <rect x="122" y="48" width="10" height="30" rx="4" fill="#FBBF24" stroke="#FEF3C7" stroke-width="1.5" />
+
+          <!-- Flickering Flames -->
+          <g class="candle-flame">
+            <path d="M73 28 C78 36 79 44 73 47 C67 44 68 36 73 28 Z" fill="#FDE047" />
+            <path d="M73 34 C76 39 76 44 73 46 C70 44 70 39 73 34 Z" fill="#FFFFFF" />
+          </g>
+          <g class="candle-flame candle-flame-2">
+            <path d="M100 18 C106 27 107 36 100 39 C93 36 94 27 100 18 Z" fill="#FB923C" />
+            <path d="M100 25 C103 30 103 36 100 38 C97 36 97 30 100 25 Z" fill="#FEF08A" />
+          </g>
+          <g class="candle-flame candle-flame-3">
+            <path d="M127 28 C132 36 133 44 127 47 C121 44 122 36 127 28 Z" fill="#FDE047" />
+            <path d="M127 34 C130 39 130 44 127 46 C124 44 124 39 127 34 Z" fill="#FFFFFF" />
+          </g>
+
+          <!-- Top Tier -->
+          <rect x="52" y="76" width="96" height="36" rx="12" fill="url(#tierTop)" stroke="#F9A8D4" stroke-width="2" />
+          <!-- Icing Drips Top -->
+          <path d="M52 86 Q64 98 76 86 Q88 100 100 86 Q112 100 124 86 Q136 98 148 86 L148 78 Q148 76 140 76 L60 76 Q52 76 52 78 Z" fill="#FDF2F8" opacity="0.92" />
+
+          <!-- Bottom Tier -->
+          <rect x="34" y="110" width="132" height="46" rx="14" fill="url(#tierBottom)" stroke="#38BDF8" stroke-width="2" />
+          <!-- Icing Drips Bottom -->
+          <path d="M34 122 Q48 136 62 122 Q76 138 90 122 Q104 136 118 122 Q132 138 146 122 Q156 134 166 122 L166 112 L34 112 Z" fill="#FDE047" opacity="0.88" />
+
+          <!-- Sparkle Dots -->
+          <circle cx="62" cy="142" r="3.5" fill="#F472B6" />
+          <circle cx="88" cy="144" r="3.5" fill="#38BDF8" />
+          <circle cx="114" cy="142" r="3.5" fill="#A855F7" />
+          <circle cx="140" cy="144" r="3.5" fill="#FDE047" />
+
+          <!-- Glowing Plate -->
+          <ellipse cx="100" cy="160" rx="80" ry="12" fill="url(#plateGrad)" stroke="#E2E8F0" stroke-width="1.5" />
+
+          <defs>
+            <radialGradient id="cakeAura" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#F59E0B" />
+              <stop offset="60%" stop-color="#EC4899" />
+              <stop offset="100%" stop-color="transparent" />
+            </radialGradient>
+            <linearGradient id="tierTop" x1="52" y1="76" x2="148" y2="112">
+              <stop offset="0%" stop-color="#EC4899" />
+              <stop offset="100%" stop-color="#8B5CF6" />
+            </linearGradient>
+            <linearGradient id="tierBottom" x1="34" y1="110" x2="166" y2="156">
+              <stop offset="0%" stop-color="#6366F1" />
+              <stop offset="50%" stop-color="#8B5CF6" />
+              <stop offset="100%" stop-color="#06B6D4" />
+            </linearGradient>
+            <linearGradient id="plateGrad" x1="20" y1="160" x2="180" y2="160">
+              <stop offset="0%" stop-color="#334155" />
+              <stop offset="50%" stop-color="#94A3B8" />
+              <stop offset="100%" stop-color="#334155" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </button>
+
+      <!-- Glowing Theme Badge -->
+      <span id="bdayThemeBadge" class="px-3.5 py-1 rounded-full text-[11px] font-orbitron font-bold uppercase tracking-widest bg-white/10 border border-white/25 text-amber-200 backdrop-blur-md mb-2">
+        ✨ SPECIAL BIRTHDAY SURPRISE ✨
+      </span>
+
+      <!-- Big Animated Headline -->
+      <h2 id="bdayHeadline" class="font-orbitron font-extrabold text-3xl sm:text-4xl leading-tight text-white drop-shadow-[0_0_24px_rgba(255,255,255,0.65)] mb-3">
+        Happy Birthday! 🎉
+      </h2>
+
+      <!-- Heartfelt Wish Glass Card -->
+      <div id="bdayWishCard" class="w-full rounded-3xl p-5 bg-black/45 backdrop-blur-xl border border-white/20 shadow-[0_0_35px_rgba(0,0,0,0.5)] mb-3">
+        <p id="bdayWishText" class="text-sm sm:text-base text-slate-100 leading-relaxed font-medium">
+          जन्मदिन की ढेर सारी शुभकामनाएँ! भगवान करे आपके सारे सपने पूरे हों और ज़िंदगी हमेशा खुशियों से चमकती रहे! ✨🎂
+        </p>
+        <div class="mt-4 pt-3 border-t border-white/15">
+          <p id="bdaySenderText" class="font-orbitron text-xs sm:text-sm font-bold text-amber-300 tracking-wide">
+            — With Love from Your Friend ❤️
+          </p>
+        </div>
+      </div>
+
+      <!-- Tap Hint Pill -->
+      <div class="px-3.5 py-1.5 rounded-full bg-black/45 border border-white/15 text-[11px] text-slate-200 backdrop-blur-md">
+        ✨ स्क्रीन या केक पर टच करें — और आतिशबाज़ी फूटेगी!
+      </div>
+    </div>
+
+    <!-- Bottom Viral CTA Button -->
+    <div class="relative z-10 w-full max-w-md mx-auto px-5 pb-6 pt-2 text-center">
+      <button
+        id="bdayCreateOwnBtn"
+        type="button"
+        class="w-full py-3.5 px-5 rounded-2xl font-bold text-sm sm:text-base text-white animated-gradient-bg shadow-[0_0_28px_rgba(139,92,246,0.6)] hover:brightness-110 active:scale-[0.98] transition"
+      >
+        ✨ अपना खुद का फ्री बर्थडे कार्ड बनाएँ
+      </button>
+      <p class="text-[10px] text-slate-300/80 mt-2 font-orbitron tracking-wider">
+        Powered by Arman AI Official
+      </p>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       JAVASCRIPT APPLICATION ENGINE (100% SELF-CONTAINED)
+       ============================================================ -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* ==========================================================
+         1. SAFE UTILITIES (TOAST, CLIPBOARD, WEB AUDIO SYNTH)
+         ========================================================== */
+      let toastTimer = null;
+
+      /**
+       * Displays a sleek floating toast message (never uses alert/confirm)
+       */
+      function showToast(message, icon = '✅') {
+        const toast = document.getElementById('actionToast');
+        const textEl = document.getElementById('actionToastText');
+        const iconEl = document.getElementById('actionToastIcon');
+        if (!toast || !textEl || !iconEl) return;
+
+        iconEl.textContent = icon;
+        textEl.textContent = message;
+
+        toast.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+        toast.classList.add('opacity-100', 'translate-y-0');
+
+        if (toastTimer) clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => {
+          toast.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+          toast.classList.remove('opacity-100', 'translate-y-0');
+        }, 2600);
+      }
+
+      /**
+       * Safe Clipboard Copy using execCommand('copy') with fallback
+       * Works reliably in iFrames, WebViews, and Android Chrome
+       */
+      function copyTextSafe(text, successMsg = 'कॉपी हो गया!') {
+        let copied = false;
+        try {
+          const textarea = document.createElement('textarea');
+          textarea.value = text;
+          textarea.setAttribute('readonly', '');
+          textarea.style.position = 'fixed';
+          textarea.style.top = '-9999px';
+          textarea.style.left = '-9999px';
+          textarea.style.opacity = '0';
+          document.body.appendChild(textarea);
+          textarea.focus();
+          textarea.select();
+          textarea.setSelectionRange(0, textarea.value.length);
+          copied = document.execCommand('copy');
+          document.body.removeChild(textarea);
+        } catch (err) {
+          copied = false;
+        }
+
+        if (copied) {
+          showToast(successMsg, '📋');
+          return true;
+        }
+
+        // Secondary fallback
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(() => {
+            showToast(successMsg, '📋');
+          }).catch(() => {
+            showToast('कॉपी करने के लिए टेक्स्ट को दबाकर चुनें', 'ℹ️');
+          });
+          return true;
+        }
+
+        showToast('टेक्स्ट तैयार है!', '✨');
+        return false;
+      }
+
+      /**
+       * Returns a clean base URL for shareable links
+       */
+      function getBaseShareUrl() {
+        try {
+          if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
+            return window.location.origin + window.location.pathname;
+          }
+        } catch (e) {}
+        return 'https://arman-ai-official.tiiny.site/';
+      }
+
+      /* ==========================================================
+         WEB AUDIO API ENGINE (CHIMES + HAPPY BIRTHDAY MELODY)
+         ========================================================== */
+      let audioCtx = null;
+
+      function getAudioContext() {
+        try {
+          const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+          if (!AudioContextClass) return null;
+          if (!audioCtx) {
+            audioCtx = new AudioContextClass();
+          }
+          if (audioCtx.state === 'suspended') {
+            audioCtx.resume();
+          }
+          return audioCtx;
+        } catch (e) {
+          return null;
+        }
+      }
+
+      /**
+       * Plays a pleasant gentle celebratory chime (Thank You & Cake tap)
+       */
+      function playPleasantChime() {
+        const ctx = getAudioContext();
+        if (!ctx) return;
+        const notes = [523.25, 659.25, 783.99, 1046.5]; // C5, E5, G5, C6
+        const now = ctx.currentTime;
+
+        notes.forEach((freq, i) => {
+          try {
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(freq, now + i * 0.08);
+            gain.gain.setValueAtTime(0.001, now + i * 0.08);
+            gain.gain.exponentialRampToValueAtTime(0.14, now + i * 0.08 + 0.03);
+            gain.gain.exponentialRampToValueAtTime(0.0001, now + i * 0.08 + 0.55);
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.start(now + i * 0.08);
+            osc.stop(now + i * 0.08 + 0.6);
+          } catch (e) {}
+        });
+      }
+
+      /**
+       * Built-in Web Audio API "Happy Birthday" Melody Synthesizer
+       */
+      const bdayMelodyNotes = [
+        // Happy Birthday to You (1)
+        { f: 261.63, d: 0.28 }, { f: 261.63, d: 0.16 }, { f: 293.66, d: 0.44 },
+        { f: 261.63, d: 0.44 }, { f: 349.23, d: 0.44 }, { f: 329.63, d: 0.85 },
+        // Happy Birthday to You (2)
+        { f: 261.63, d: 0.28 }, { f: 261.63, d: 0.16 }, { f: 293.66, d: 0.44 },
+        { f: 261.63, d: 0.44 }, { f: 392.00, d: 0.44 }, { f: 349.23, d: 0.85 },
+        // Happy Birthday Dear Friend (3)
+        { f: 261.63, d: 0.28 }, { f: 261.63, d: 0.16 }, { f: 523.25, d: 0.44 },
+        { f: 440.00, d: 0.44 }, { f: 349.23, d: 0.44 }, { f: 329.63, d: 0.44 }, { f: 293.66, d: 0.72 },
+        // Happy Birthday to You (4)
+        { f: 466.16, d: 0.28 }, { f: 466.16, d: 0.16 }, { f: 440.00, d: 0.44 },
+        { f: 349.23, d: 0.44 }, { f: 392.00, d: 0.44 }, { f: 349.23, d: 1.05 }
+      ];
+
+      let isBdayMusicPlaying = false;
+      let bdayMusicTimeout = null;
+      let bdayNoteIndex = 0;
+
+      function playSingleMelodyNote(freq, duration) {
+        const ctx = getAudioContext();
+        if (!ctx) return;
+        try {
+          const now = ctx.currentTime;
+          // Warm music-box dual oscillator
+          const osc1 = ctx.createOscillator();
+          const osc2 = ctx.createOscillator();
+          const gain = ctx.createGain();
+
+          osc1.type = 'triangle';
+          osc2.type = 'sine';
+          osc1.frequency.setValueAtTime(freq, now);
+          osc2.frequency.setValueAtTime(freq * 2, now); // gentle octave shimmer
+
+          gain.gain.setValueAtTime(0.001, now);
+          gain.gain.exponentialRampToValueAtTime(0.16, now + 0.03);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + duration * 0.95);
+
+          const gain2 = ctx.createGain();
+          gain2.gain.value = 0.22;
+
+          osc1.connect(gain);
+          osc2.connect(gain2);
+          gain2.connect(gain);
+          gain.connect(ctx.destination);
+
+          osc1.start(now);
+          osc2.start(now);
+          osc1.stop(now + duration);
+          osc2.stop(now + duration);
+        } catch (e) {}
+      }
+
+      function scheduleNextMelodyNote() {
+        if (!isBdayMusicPlaying) return;
+        const note = bdayMelodyNotes[bdayNoteIndex];
+        playSingleMelodyNote(note.f, note.d);
+        bdayNoteIndex = (bdayNoteIndex + 1) % bdayMelodyNotes.length;
+        const pauseExtra = bdayNoteIndex === 0 ? 500 : 35;
+        bdayMusicTimeout = setTimeout(scheduleNextMelodyNote, note.d * 1000 + pauseExtra);
+      }
+
+      function startBdayMusic() {
+        if (isBdayMusicPlaying) return;
+        const ctx = getAudioContext();
+        if (!ctx) return;
+        isBdayMusicPlaying = true;
+        bdayNoteIndex = 0;
+        updateMusicButtonUI();
+        scheduleNextMelodyNote();
+      }
+
+      function stopBdayMusic() {
+        isBdayMusicPlaying = false;
+        if (bdayMusicTimeout) {
+          clearTimeout(bdayMusicTimeout);
+          bdayMusicTimeout = null;
+        }
+        updateMusicButtonUI();
+      }
+
+      function updateMusicButtonUI() {
+        const btn = document.getElementById('bdayMusicToggle');
+        if (!btn) return;
+        btn.textContent = isBdayMusicPlaying ? '🔇 म्यूज़िक बंद करें' : '🔊 म्यूज़िक चलाएँ';
+      }
+
+      /* ==========================================================
+         2. WELCOME TOAST LOGIC
+         ========================================================== */
+      let welcomeTimer = null;
+
+      function showWelcomeToast() {
+        const el = document.getElementById('welcomeToast');
+        if (!el) return;
+        setTimeout(() => {
+          el.classList.remove('opacity-0', '-translate-y-6', 'pointer-events-none');
+          el.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+        }, 350);
+
+        welcomeTimer = setTimeout(hideWelcomeToast, 4000);
+      }
+
+      function hideWelcomeToast() {
+        const el = document.getElementById('welcomeToast');
+        if (!el) return;
+        if (welcomeTimer) clearTimeout(welcomeTimer);
+        el.classList.add('opacity-0', '-translate-y-6', 'pointer-events-none');
+        el.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+      }
+
+      document.getElementById('closeWelcomeToast').addEventListener('click', hideWelcomeToast);
+
+      /* ==========================================================
+         3. TOOL NAVIGATION & REAL-TIME LIVE SEARCH ENGINE
+         ========================================================== */
+      const toolTabs = document.querySelectorAll('.tool-tab-card');
+      const toolPanels = document.querySelectorAll('.tool-panel');
+
+      function switchTool(toolId, shouldScroll = false) {
+        toolTabs.forEach(btn => {
+          const isMatch = btn.dataset.tool === toolId;
+          btn.classList.toggle('tool-tab-active', isMatch);
+          btn.classList.remove('opacity-40', 'scale-95');
+        });
+
+        toolPanels.forEach(panel => {
+          const isMatch = panel.id === 'panel-' + toolId;
+          panel.classList.toggle('hidden', !isMatch);
+        });
+
+        if (shouldScroll) {
+          const ws = document.getElementById('workspaceContainer');
+          if (ws) {
+            ws.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      }
+
+      toolTabs.forEach(btn => {
+        btn.addEventListener('click', () => {
+          switchTool(btn.dataset.tool, true);
+        });
+      });
+
+      // Live Search Index with Quick Actions
+      const searchCatalog = [
+        { label: '🤖 YouTube Video Script Prompt', keywords: 'youtube video script prompt ai command कमांड वीडियो', tool: 'prompt', action: () => selectPromptCategory('youtube') },
+        { label: '🎨 AI Photo / Image Art Prompt', keywords: 'photo image art picture ai prompt फोटो इमेज', tool: 'prompt', action: () => selectPromptCategory('photo') },
+        { label: '💼 Business Idea Prompt', keywords: 'business startup dukan paise idea prompt बिज़नेस दुकान', tool: 'prompt', action: () => selectPromptCategory('business') },
+        { label: '📚 Study & Exam Notes Prompt', keywords: 'study exam notes student padhai prompt पढ़ाई नोट्स', tool: 'prompt', action: () => selectPromptCategory('study') },
+        { label: '📱 Instagram Reel Script Prompt', keywords: 'instagram reel viral script hook prompt रील इंस्टाग्राम', tool: 'prompt', action: () => selectPromptCategory('reel') },
+        { label: '💻 Coding & App Help Prompt', keywords: 'coding code python app website html prompt कोडिंग ऐप', tool: 'prompt', action: () => selectPromptCategory('coding') },
+        { label: '🔤 VIP Stylish Name Fonts', keywords: 'name stylish font vip fancy text design नाम स्टाइलिश फोंट', tool: 'namebio', action: () => switchNameBioSubtab('fonts') },
+        { label: '🔥 Instagram Bio & Shayari', keywords: 'bio shayari caption attitude motivational love instagram बायो शायरी', tool: 'namebio', action: () => switchNameBioSubtab('bios') },
+        { label: '🎂 Magic Birthday Wish & Fireworks', keywords: 'birthday wish cake fireworks happy bday card link बर्थडे केक आतिशबाज़ी', tool: 'birthday', action: () => {} }
+      ];
+
+      const searchInput = document.getElementById('liveSearchInput');
+      const clearSearchBtn = document.getElementById('clearSearchBtn');
+      const searchResultsBar = document.getElementById('searchResultsBar');
+
+      function handleLiveSearch() {
+        const q = searchInput.value.trim().toLowerCase();
+        clearSearchBtn.classList.toggle('hidden', q.length === 0);
+
+        if (!q) {
+          searchResultsBar.classList.add('hidden');
+          searchResultsBar.innerHTML = '';
+          toolTabs.forEach(card => card.classList.remove('opacity-40', 'scale-95', 'ring-2', 'ring-cyan-400'));
+          return;
+        }
+
+        const matches = searchCatalog.filter(item =>
+          item.keywords.toLowerCase().includes(q) || item.label.toLowerCase().includes(q)
+        );
+
+        const matchedTools = new Set(matches.map(m => m.tool));
+
+        // Highlight matching shortcut cards & dim non-matching ones
+        toolTabs.forEach(card => {
+          if (matchedTools.size > 0) {
+            const isMatched = matchedTools.has(card.dataset.tool);
+            card.classList.toggle('opacity-40', !isMatched);
+            card.classList.toggle('scale-95', !isMatched);
+            card.classList.toggle('ring-2', isMatched);
+            card.classList.toggle('ring-cyan-400', isMatched);
+          } else {
+            card.classList.remove('opacity-40', 'scale-95', 'ring-2', 'ring-cyan-400');
+          }
+        });
+
+        searchResultsBar.innerHTML = '';
+        searchResultsBar.classList.remove('hidden');
+
+        if (matches.length === 0) {
+          const emptyChip = document.createElement('span');
+          emptyChip.className = 'px-3.5 py-1.5 rounded-xl text-xs bg-white/5 border border-white/10 text-slate-300';
+          emptyChip.textContent = 'कोई सीधा मिलान नहीं — नीचे किसी भी टूल पर क्लिक करें ✨';
+          searchResultsBar.appendChild(emptyChip);
+          return;
+        }
+
+        matches.slice(0, 6).forEach(match => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'px-3.5 py-2 rounded-xl text-xs font-semibold bg-cyan-500/20 hover:bg-cyan-500/35 border border-cyan-400/45 text-cyan-100 transition active:scale-95';
+          btn.textContent = match.label + ' →';
+          btn.addEventListener('click', () => {
+            switchTool(match.tool, true);
+            match.action();
+            searchInput.value = '';
+            handleLiveSearch();
+          });
+          searchResultsBar.appendChild(btn);
+        });
+      }
+
+      searchInput.addEventListener('input', handleLiveSearch);
+      clearSearchBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        handleLiveSearch();
+        searchInput.focus();
+      });
+
+      /* ==========================================================
+         4. TOOL 1: 🤖 MAGIC AI PROMPT GENERATOR
+         ========================================================== */
+      const promptCategories = [
+        { id: 'youtube', label: '🎬 YouTube Video Script' },
+        { id: 'photo', label: '🎨 AI Photo / Image Art' },
+        { id: 'business', label: '💼 Business Idea' },
+        { id: 'study', label: '📚 Study & Exam Notes' },
+        { id: 'reel', label: '📱 Instagram Reel Script' },
+        { id: 'coding', label: '💻 Coding & App Help' }
+      ];
+
+      const promptTones = [
+        { id: 'viral', label: '🔥 Viral & Engaging', desc: 'high-retention, curiosity-driven, viral hooks, energetic and emotionally gripping' },
+        { id: 'professional', label: '👔 Professional', desc: 'authoritative, polished, executive-grade, structured, clear and persuasive' },
+        { id: 'hinglish', label: '🇮🇳 Simple Hinglish', desc: 'friendly, everyday Indian Hinglish (natural mix of Hindi & English in Roman script) that any beginner can instantly understand' },
+        { id: 'cinematic', label: '🎥 Cinematic', desc: 'vivid visual storytelling, dramatic pacing, ultra-detailed sensory atmosphere and movie-grade polish' }
+      ];
+
+      let selectedPromptCat = 'youtube';
+      let selectedPromptTone = 'viral';
+
+      function renderPromptChips() {
+        const catWrap = document.getElementById('promptCategoryChips');
+        catWrap.innerHTML = '';
+        promptCategories.forEach(cat => {
+          const active = cat.id === selectedPromptCat;
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = active
+            ? 'px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-gradient-to-r from-cyan-500 to-purple-600 text-white shadow-[0_0_16px_rgba(6,182,212,0.4)] transition'
+            : 'px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-white/5 hover:bg-white/10 border border-white/15 text-slate-200 transition';
+          btn.textContent = cat.label;
+          btn.addEventListener('click', () => selectPromptCategory(cat.id));
+          catWrap.appendChild(btn);
+        });
+
+        const toneWrap = document.getElementById('promptToneChips');
+        toneWrap.innerHTML = '';
+        promptTones.forEach(tone => {
+          const active = tone.id === selectedPromptTone;
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = active
+            ? 'px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-purple-600/40 border border-purple-400 text-white shadow-[0_0_14px_rgba(168,85,247,0.35)] transition'
+            : 'px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white/5 hover:bg-white/10 border border-white/15 text-slate-300 transition';
+          btn.textContent = tone.label;
+          btn.addEventListener('click', () => {
+            selectedPromptTone = tone.id;
+            renderPromptChips();
+          });
+          toneWrap.appendChild(btn);
+        });
+      }
+
+      function selectPromptCategory(catId) {
+        selectedPromptCat = catId;
+        renderPromptChips();
+      }
+
+      /**
+       * Builds a deeply structured, high-performing Master English Prompt
+       */
+      function buildMasterPrompt(category, topic, toneObj) {
+        const cleanTopic = topic.trim() || 'Self-Improvement and Success in 2026';
+
+        const templates = {
+          youtube: `Act as a world-class YouTube Scriptwriter & Viral Content Strategist with 10+ years of experience growing channels past 1M subscribers.
+
+OBJECTIVE:
+Write a complete, high-retention YouTube video script on the topic: "${cleanTopic}".
+
+TONE & STYLE:
+Use a ${toneObj.desc} tone throughout the script.
+
+REQUIRED STRUCTURE:
+1. [0:00 - 0:25] Scroll-Stopping Hook: Start with a bold pattern-interrupt, surprising fact, or relatable pain point so viewers refuse to click away.
+2. [0:25 - 1:00] Promise & Stakes: Clearly explain what the viewer will gain by watching till the end.
+3. [Main Body - 4 Core Chapters]: Break the topic into 4 punchy, easy-to-follow insights with real-life examples, mini-stories, and smooth transitions.
+4. Visual & B-Roll Cues: Include [VISUAL] and [ON-SCREEN TEXT] directions in brackets for easy video editing.
+5. Climax & Call-To-Action: End with an inspiring takeaway and a natural subscribe/comment prompt.
+
+EXTRA BONUS:
+- Also suggest 3 high-CTR YouTube Titles and 2 bold Thumbnail text ideas.
+- Keep sentences short, spoken-word friendly, and zero fluff.`,
+
+          photo: `Act as an award-winning AI Visual Director & Master Prompt Engineer for Midjourney, Ideogram, and Gemini Image Generation.
+
+OBJECTIVE:
+Create an ultra-detailed, breathtaking image generation prompt based on the concept: "${cleanTopic}".
+
+VISUAL STYLE & MOOD:
+Craft the aesthetic to be ${toneObj.desc}.
+
+INCLUDE THESE EXACT LAYERS IN THE FINAL IMAGE PROMPT:
+1. Main Subject & Action: Crystal-clear foreground focus, expressive posture, intricate textures, and realistic details.
+2. Environment & Storytelling Background: Rich depth, atmospheric perspective, and authentic cultural/scene elements.
+3. Lighting & Color Palette: Volumetric lighting, dramatic rim light, balanced shadows, and rich color grading.
+4. Camera & Lens Specs: Specify lens (e.g., 85mm f/1.4 or 35mm wide cinematic), composition rule, depth of field, 8K ultra-sharp photorealistic rendering.
+
+OUTPUT FORMAT:
+- Provide 1 Ready-to-Paste Master Image Prompt (one clean paragraph).
+- Provide 2 Creative Variations (one dramatic neon style, one ultra-realistic photography style).
+- Include a short Negative Prompt line to avoid blurry or distorted artifacts.`,
+
+          business: `Act as a Top Startup Advisor, Indian Market Strategist & Micro-Business Consultant.
+
+OBJECTIVE:
+Create a practical, step-by-step, low-investment Business Blueprint for: "${cleanTopic}".
+
+COMMUNICATION STYLE:
+Explain everything in a ${toneObj.desc} manner with actionable clarity.
+
+REQUIRED SECTIONS:
+1. Problem & Profitable Target Audience: Who will happily pay for this and why?
+2. Low-Budget Launch Plan (Step-by-Step): Exact actions for Week 1 to Week 4 starting with minimal capital.
+3. Pricing & Monthly Profit Math: Realistic cost breakdown, pricing strategy, and how to hit the first ₹50,000–₹1,00,000 profit.
+4. Smart Marketing & First 20 Customers: Free WhatsApp, Instagram Reels, and local guerrilla marketing ideas to get instant buyers.
+5. Top 3 Mistakes to Avoid: Real pitfalls beginners face and how to prevent them.
+
+QUALITY RULES:
+- Avoid vague theory; give concrete numbers, scripts, and daily action items.`,
+
+          study: `Act as an Elite Topper Mentor, Memory Coach & Expert Subject Teacher.
+
+OBJECTIVE:
+Prepare complete, crystal-clear, exam-ready Study Notes & Mastery Guide for the topic: "${cleanTopic}".
+
+TEACHING STYLE:
+Deliver the explanation in a ${toneObj.desc} style so even a complete beginner masters it fast.
+
+REQUIRED STRUCTURE:
+1. 2-Minute Simple Overview: Explain the core concept using a super-easy daily-life analogy.
+2. Bullet-Point Smart Notes: Key definitions, formulas/rules, and highlighted keywords for quick revision.
+3. Memory Tricks & Mnemonics: Give 2 clever shortcuts so I never forget the tough parts in exams.
+4. Top 5 Most Likely Exam Questions: Provide high-scoring model answers formatted cleanly.
+5. Quick Self-Test Quiz: Give 5 MCQs (with answers hidden at the bottom) so I can test myself.
+
+QUALITY RULES:
+- Use clear headings, bold highlights, and zero confusing jargon.`,
+
+          reel: `Act as a Viral Instagram Reels Strategist & Short-Form Video Scriptwriter.
+
+OBJECTIVE:
+Write 3 scroll-stopping 30-to-45 second Instagram Reel scripts on the topic: "${cleanTopic}".
+
+STYLE & VIBE:
+Make the delivery ${toneObj.desc}, optimized for maximum shares, saves, and watch-time.
+
+FOR EACH REEL SCRIPT INCLUDE:
+1. First 3-Second Viral Hook (Spoken + On-Screen Bold Text): Must immediately stop people from scrolling.
+2. Fast-Paced Value Body (15–30 seconds): Short, punchy lines with high energy and clear storytelling.
+3. Smart Loop / CTA Ending: Encourage viewers to comment a keyword or share with a friend.
+4. Shooting & Editing Tip: Suggest background music mood and quick visual transitions.
+
+BONUS:
+- Write 1 catchy Instagram Caption and 10 targeted niche hashtags.`,
+
+          coding: `Act as a Senior Full-Stack Software Engineer, AI Architect & Patient Coding Mentor.
+
+OBJECTIVE:
+Help me design and build a clean, working, bug-free solution for: "${cleanTopic}".
+
+EXPLANATION STYLE:
+Present the solution in a ${toneObj.desc} way, ensuring a beginner can understand every piece easily.
+
+REQUIRED DELIVERABLES:
+1. Simple Architecture Plan: Explain in 4-5 clear bullet points how the logic works before writing code.
+2. Complete Runnable Code: Provide clean, well-commented, production-quality code with proper error handling and security best practices (no placeholders or skipped parts).
+3. Step-by-Step How to Run It: Simple instructions to test it on mobile or PC.
+4. Common Errors & Quick Fixes: List 2-3 issues beginners might hit and how to fix them instantly.
+5. Next Upgrade Ideas: Suggest 2 pro features I can add once the basic version works.`
+        };
+
+        return templates[category] || templates.youtube;
+      }
+
+      document.querySelectorAll('.quick-topic-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.getElementById('promptTopicInput').value = btn.dataset.topic;
+        });
+      });
+
+      let latestGeneratedPrompt = '';
+
+      document.getElementById('generatePromptBtn').addEventListener('click', () => {
+        const topic = document.getElementById('promptTopicInput').value.trim();
+        if (!topic) {
+          showToast('कृपया पहले अपना टॉपिक लिखें!', '✍️');
+          document.getElementById('promptTopicInput').focus();
+          return;
+        }
+        const toneObj = promptTones.find(t => t.id === selectedPromptTone) || promptTones[0];
+        latestGeneratedPrompt = buildMasterPrompt(selectedPromptCat, topic, toneObj);
+
+        const outSec = document.getElementById('promptOutputSection');
+        const outText = document.getElementById('promptOutputText');
+        outText.textContent = latestGeneratedPrompt;
+        outSec.classList.remove('hidden');
+
+        const words = latestGeneratedPrompt.split(/\s+/).filter(Boolean).length;
+        document.getElementById('promptWordBadge').textContent = `${words} Words • Pro Grade`;
+
+        showToast('आपका Magic Prompt तैयार है!', '✨');
+        outSec.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+
+      document.getElementById('copyPromptBtn').addEventListener('click', () => {
+        if (!latestGeneratedPrompt) return;
+        copyTextSafe(latestGeneratedPrompt, 'Magic Prompt कॉपी हो गया!');
+      });
+
+      document.getElementById('openChatGPTBtn').addEventListener('click', () => {
+        if (!latestGeneratedPrompt) return;
+        copyTextSafe(latestGeneratedPrompt, 'Prompt कॉपी हो गया! ChatGPT खुल रहा है...');
+        setTimeout(() => {
+          window.open('https://chatgpt.com/', '_blank', 'noopener,noreferrer');
+        }, 250);
+      });
+
+      renderPromptChips();
+
+      /* ==========================================================
+         5. TOOL 2: ✨ VIP NAME & BIO (18 UNICODE FONTS + BIOS)
+         ========================================================== */
+      const UPPER_ASCII = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      const LOWER_ASCII = 'abcdefghijklmnopqrstuvwxyz';
+      const DIGIT_ASCII = '0123456789';
+
+      /**
+       * Converts ASCII letters/digits into true Unicode fancy styles safely
+       */
+      function mapUnicodeFont(text, upperMap, lowerMap, digitMap) {
+        const upArr = upperMap ? Array.from(upperMap) : null;
+        const lowArr = lowerMap ? Array.from(lowerMap) : null;
+        const digArr = digitMap ? Array.from(digitMap) : null;
+
+        return Array.from(text).map(ch => {
+          const uIdx = UPPER_ASCII.indexOf(ch);
+          if (uIdx !== -1 && upArr && upArr[uIdx]) return upArr[uIdx];
+          const lIdx = LOWER_ASCII.indexOf(ch);
+          if (lIdx !== -1 && lowArr && lowArr[lIdx]) return lowArr[lIdx];
+          const dIdx = DIGIT_ASCII.indexOf(ch);
+          if (dIdx !== -1 && digArr && digArr[dIdx]) return digArr[dIdx];
+          return ch;
+        }).join('');
+      }
+
+      const FONT_MAPS = {
+        boldSerif: {
+          u: '𝐀𝐁𝐂𝐃𝐄𝐅𝐆𝐇𝐈𝐉𝐊𝐋𝐌𝐍𝐎𝐏𝐐𝐑𝐒𝐓𝐔𝐕𝐖𝐗𝐘𝐙',
+          l: '𝐚𝐛𝐜𝐝𝐞𝐟𝐠𝐡𝐢𝐣𝐤𝐥𝐦𝐧𝐨𝐩𝐪𝐫𝐬𝐭𝐮𝐯𝐰𝐱𝐲𝐳',
+          d: '𝟎𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗'
+        },
+        boldSans: {
+          u: '𝗔𝗕𝗖𝗗𝗘𝗙𝗚𝗛𝗜𝗝𝗞𝗟𝗠𝗡𝗢𝗣𝗤𝗥𝗦𝗧𝗨𝗩𝗪𝗫𝗬𝗭',
+          l: '𝗮𝗯𝗰𝗱𝗲𝗳𝗴𝗵𝗶𝗷𝗸𝗹𝗺𝗻𝗼𝗽𝗾𝗿𝘀𝘁𝘂𝘃𝘄𝘅𝘆𝘇',
+          d: '𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵'
+        },
+        boldItalic: {
+          u: '𝑨𝑩𝑪𝑫𝑬𝑭𝑮𝑯𝑰𝑱𝑲𝑳𝑴𝑵𝑶𝑷𝑸𝑹𝑺𝑻𝑼𝑽𝑾𝑿𝒀𝒁',
+          l: '𝒂𝒃𝒄𝒅𝒆𝒇𝒈𝒉𝒊𝒋𝒌𝒍𝒎𝒏𝒐𝒑𝒒𝒓𝒔𝒕𝒖𝒗𝒘𝒙𝒚𝒛',
+          d: '𝟎𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗'
+        },
+        gothic: {
+          u: '𝕬𝕭𝕮𝕯𝕰𝕱𝕲𝕳𝕴𝕵𝕶𝕷𝕸𝕹𝕺𝕻𝕼𝕽𝕾𝕿𝖀𝖁𝖂𝖃𝖄𝖅',
+          l: '𝖆𝖇𝖈𝖉𝖊𝖋𝖌𝖍𝖎𝖏𝖐𝖑𝖒𝖓𝖔𝖕𝖖𝖗𝖘𝖙𝖚𝖛𝖜𝖝𝖞𝖟',
+          d: '𝟎𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗'
+        },
+        script: {
+          u: '𝓐𝓑𝓒𝓓𝓔𝓕𝓖𝓗𝓘𝓙𝓚𝓛𝓜𝓝𝓞𝓟𝓠𝓡𝓢𝓣𝓤𝓥𝓦𝓧𝓨𝓩',
+          l: '𝓪𝓫𝓬𝓭𝓮𝓯𝓰𝓱𝓲𝓳𝓴𝓵𝓶𝓷𝓸𝓹𝓺𝓻𝓼𝓽𝓾𝓿𝔀𝔁𝔂𝔃',
+          d: '0123456789'
+        },
+        doubleStruck: {
+          u: '𝔸𝔹ℂ𝔻𝔼𝔽𝔾ℍ𝕀𝕁𝕂𝕃𝕄ℕ𝕆ℙℚℝ𝕊𝕋𝕌𝕍𝕎𝕏𝕐ℤ',
+          l: '𝕒𝕓𝕔𝕕𝕖𝕗𝕘𝕙𝕚𝕛𝕜𝕝𝕞𝕟𝕠𝕡𝕢𝕣𝕤𝕥𝕦𝕧𝕨𝕩𝕪𝕫',
+          d: '𝟘𝟙𝟚𝟛𝟜𝟝𝟞𝟟𝟠𝟡'
+        },
+        monospace: {
+          u: '𝙰𝙱𝙲𝙳𝙴𝙵𝙶𝙷𝙸𝙹𝙺𝙻𝙼𝙽𝙾𝙿𝚀𝚁𝚂𝚃𝚄𝚅𝚆𝚇𝚈𝚉',
+          l: '𝚊𝚋𝚌𝚍𝚎𝚏𝚐𝚑𝚒𝚓𝚔𝚕𝚖𝚗𝚘𝚙𝚚𝚛𝚜𝚝𝚞𝚟𝚠𝚡𝚢𝚣',
+          d: '𝟶𝟷𝟸𝟹𝟺𝟻𝟼𝟽𝟾𝟿'
+        },
+        bubble: {
+          u: 'ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏ',
+          l: 'ⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ',
+          d: '⓪①②③④⑤⑥⑦⑧⑨'
+        },
+        squared: {
+          u: '🅰🅱🅲🅳🅴🅵🅶🅷🅸🅹🅺🅻🅼🅽🅾🅿🆀🆁🆂🆃🆄🆅🆆🆇🆈🆉',
+          l: '🅰🅱🅲🅳🅴🅵🅶🅷🅸🅹🅺🅻🅼🅽🅾🅿🆀🆁🆂🆃🆄🆅🆆🆇🆈🆉',
+          d: '0123456789'
+        },
+        smallCaps: {
+          u: 'ᴀʙᴄᴅᴇꜰɢʜɪᴊᴋʟᴍɴᴏᴘǫʀsᴛᴜᴠᴡxʏᴢ',
+          l: 'ᴀʙᴄᴅᴇꜰɢʜɪᴊᴋʟᴍɴᴏᴘǫʀsᴛᴜᴠᴡxʏᴢ',
+          d: '0123456789'
+        },
+        wide: {
+          u: 'ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ',
+          l: 'ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ',
+          d: '０１２３４５６７８９'
+        }
+      };
+
+      const VIP_FONT_STYLES = [
+        { name: 'Royal Crown VIP', fn: t => `👑 ${mapUnicodeFont(t, FONT_MAPS.gothic.u, FONT_MAPS.gothic.l, FONT_MAPS.gothic.d)} 👑` },
+        { name: 'Angel Wings Legend', fn: t => `꧁༒☬ ${mapUnicodeFont(t, FONT_MAPS.boldItalic.u, FONT_MAPS.boldItalic.l, FONT_MAPS.boldItalic.d)} ☬༒꧂` },
+        { name: 'Cyber Lightning', fn: t => `⚡『 ${mapUnicodeFont(t, FONT_MAPS.boldSans.u, FONT_MAPS.boldSans.l, FONT_MAPS.boldSans.d)} 』⚡` },
+        { name: 'Star Sparkle Script', fn: t => `★彡 ${mapUnicodeFont(t, FONT_MAPS.script.u, FONT_MAPS.script.l, FONT_MAPS.script.d)} 彡★` },
+        { name: 'Bold Royal Serif', fn: t => mapUnicodeFont(t, FONT_MAPS.boldSerif.u, FONT_MAPS.boldSerif.l, FONT_MAPS.boldSerif.d) },
+        { name: 'Gothic Mafia', fn: t => mapUnicodeFont(t, FONT_MAPS.gothic.u, FONT_MAPS.gothic.l, FONT_MAPS.gothic.d) },
+        { name: 'Luxury Cursive', fn: t => mapUnicodeFont(t, FONT_MAPS.script.u, FONT_MAPS.script.l, FONT_MAPS.script.d) },
+        { name: 'Double-Struck Tech', fn: t => mapUnicodeFont(t, FONT_MAPS.doubleStruck.u, FONT_MAPS.doubleStruck.l, FONT_MAPS.doubleStruck.d) },
+        { name: 'Fire Attitude', fn: t => `🔥★ ${mapUnicodeFont(t, FONT_MAPS.boldSerif.u, FONT_MAPS.boldSerif.l, FONT_MAPS.boldSerif.d)} ★🔥` },
+        { name: 'Diamond Elite', fn: t => `💎 ${mapUnicodeFont(t, FONT_MAPS.doubleStruck.u, FONT_MAPS.doubleStruck.l, FONT_MAPS.doubleStruck.d)} 💎` },
+        { name: 'Gamer Monospace', fn: t => mapUnicodeFont(t, FONT_MAPS.monospace.u, FONT_MAPS.monospace.l, FONT_MAPS.monospace.d) },
+        { name: 'Bubble Aesthetic', fn: t => mapUnicodeFont(t, FONT_MAPS.bubble.u, FONT_MAPS.bubble.l, FONT_MAPS.bubble.d) },
+        { name: 'Dark Block VIP', fn: t => mapUnicodeFont(t, FONT_MAPS.squared.u, FONT_MAPS.squared.l, FONT_MAPS.squared.d) },
+        { name: 'Minimal Small Caps', fn: t => `✦ ${mapUnicodeFont(t, FONT_MAPS.smallCaps.u, FONT_MAPS.smallCaps.l, FONT_MAPS.smallCaps.d)} ✦` },
+        { name: 'Vaporwave Wide', fn: t => mapUnicodeFont(t, FONT_MAPS.wide.u, FONT_MAPS.wide.l, FONT_MAPS.wide.d) },
+        { name: 'Sword Warrior', fn: t => `⚔️ ${mapUnicodeFont(t, FONT_MAPS.gothic.u, FONT_MAPS.gothic.l, FONT_MAPS.gothic.d)} ⚔️` },
+        { name: 'Heart Aesthetic', fn: t => `❤️✨ ${mapUnicodeFont(t, FONT_MAPS.script.u, FONT_MAPS.script.l, FONT_MAPS.script.d)} ✨❤️` },
+        { name: 'Verified Boss', fn: t => `☑️ ${mapUnicodeFont(t, FONT_MAPS.boldSans.u, FONT_MAPS.boldSans.l, FONT_MAPS.boldSans.d)} ☑️` }
+      ];
+
+      const BIO_MOODS = [
+        { id: 'attitude', label: '🔥 Attitude' },
+        { id: 'motivational', label: '🚀 Motivational' },
+        { id: 'aesthetic', label: '✨ Aesthetic' },
+        { id: 'desi', label: '👑 Royal Desi' },
+        { id: 'emotional', label: '💔 Emotional' }
+      ];
+
+      const BIO_DATABASE = {
+        attitude: [
+          {
+            tag: 'Instagram Bio',
+            text: `👑 Official Account — {NAME}\n🔥 हमारा अंदाज़ अलग है, कॉपी करने से लेवल नहीं बनता\n⚡ Silent Work, Loud Success\n🚫 No Fake People | Only Real Vibes`
+          },
+          {
+            tag: 'Attitude Shayari',
+            text: `हम वक्त के साथ शौक बदलते हैं, दोस्त नहीं…\nऔर जो हमें छोड़कर गए, अब वो हमारे नाम से जलते हैं! 🔥 — {NAME}`
+          },
+          {
+            tag: 'Reel Caption',
+            text: `बात औकात की नहीं, जिगर की होती है साहब… हम अकेले ही काफी हैं! ⚡😎 #Attitude #{TAG}`
+          },
+          {
+            tag: 'VIP Profile Bio',
+            text: `😎 {NAME} | Mr. Perfectionist\n🦁 शेर को शिकार करना कोई नहीं सिखाता\n🎯 Dream Big • Hustle Hard\n💯 Respect for All, Fear of None`
+          }
+        ],
+        motivational: [
+          {
+            tag: 'Hustler Bio',
+            text: `🚀 {NAME} | Future Visionary\n💻 खामोशी से मेहनत कर रहा हूँ, शोर मेरी कामयाबी मचाएगी\n📈 1% Better Every Single Day\n🙏 माता-पिता का सपना = मेरी ज़िंदगी का लक्ष्य`
+          },
+          {
+            tag: 'Motivational Shayari',
+            text: `मंज़िलें उन्हीं को मिलती हैं जिनके सपनों में जान होती है,\nपंखों से कुछ नहीं होता साहब, हौसलों से उड़ान होती है! 🚀✨ — {NAME}`
+          },
+          {
+            tag: 'Reel Caption',
+            text: `आज जो लोग हँस रहे हैं, कल वही लोग तुम्हारी कहानी दूसरों को सुनाएँगे। बस रुकना मत! 🔥💪 #NeverGiveUp`
+          },
+          {
+            tag: 'Student / Creator Bio',
+            text: `✨ {NAME}\n📚 Learning Skills • Building Dreams\n⏳ वक्त सबका आता है, मेरा दौर आएगा\n🌍 Aiming for the Top 1%`
+          }
+        ],
+        aesthetic: [
+          {
+            tag: 'Clean Aesthetic Bio',
+            text: `✦ {NAME} ✦\n🌙 Soft Heart • Strong Mind\n🎧 Music, Chai & Midnight Thoughts\n✨ Creating my own sunshine every day`
+          },
+          {
+            tag: 'Aesthetic Caption',
+            text: `सुकून की तलाश में निकले थे, खुद से ही मोहब्बत हो गई… ✨🌙 — {NAME}`
+          },
+          {
+            tag: 'Minimal Profile',
+            text: `🕊️ {NAME}\n📷 Capturing moments, not just pictures\n🌊 Calm ocean, deep dreams\n🤍 Good vibes & peaceful energy only`
+          },
+          {
+            tag: 'Night Vibe Shayari',
+            text: `कुछ ख्वाब आँखों में सजाकर रखा है,\nशोर भरी दुनिया से खुद को बचाकर रखा है। ✨🌌`
+          }
+        ],
+        desi: [
+          {
+            tag: 'Royal Desi Bio',
+            text: `👑 देसी छोरा — {NAME}\n🇮🇳 मिट्टी से जुड़ा हूँ, पर सपने आसमान के हैं\n❤️ माँ-बाप की दुआ सबसे बड़ी दौलत\n🔥 Simple Living, Royal Thinking`
+          },
+          {
+            tag: 'Desi Swag Shayari',
+            text: `हम देसी लोग हैं जनाब, दिल के साफ और जुबान के पक्के होते हैं,\nजहाँ हाथ पकड़ते हैं, आखिरी साँस तक साथ निभाते हैं! 👑🔥 — {NAME}`
+          },
+          {
+            tag: 'Desi Reel Caption',
+            text: `ना किसी का घमंड, ना किसी का डर… देसी अंदाज़ ही सबसे बेहतर! 👑🇮🇳 #RoyalDesi`
+          },
+          {
+            tag: 'King Bio',
+            text: `🚩 {NAME} | Royal Blood\n🏍️ Speed Lover | 🎶 Desi Beats\n🤝 यारों का यार, दुश्मनों का बाप\n✨ जियो ऐसे कि लोग मिसाल दें`
+          }
+        ],
+        emotional: [
+          {
+            tag: 'Deep Feeling Bio',
+            text: `💔 {NAME}\n🥀 मुस्कुराता बहुत हूँ, पर अंदर एक समंदर खामोश है\n🌙 जो टूटकर भी सँभल जाए, उसे कोई हरा नहीं सकता\n✍️ Writing feelings that words can't say`
+          },
+          {
+            tag: 'Heart Touching Shayari',
+            text: `बहुत कुछ सिखा दिया इस ज़िंदगी ने कम उम्र में ही,\nअब किसी से कोई शिकायत नहीं… बस खुद से मोहब्बत है! 🥀✨ — {NAME}`
+          },
+          {
+            tag: 'Emotional Caption',
+            text: `अकेले चलना सीख लिया है मैंने, अब किसी के जाने का डर नहीं लगता। 🌙💔 #DeepThoughts`
+          },
+          {
+            tag: 'Broken Yet Strong',
+            text: `⚡ {NAME}\n🌧️ आँसुओं ने सिखाया है पत्थर से फौलाद बनना\n🖤 Trust Less, Focus More\n🎯 अब सिर्फ अपने करियर से इश्क़ है`
+          }
+        ]
+      };
+
+      let selectedBioMood = 'attitude';
+      const vipNameInput = document.getElementById('vipNameInput');
+
+      function renderVipFonts() {
+        const raw = vipNameInput.value.trim() || 'Royal King';
+        const grid = document.getElementById('fontsGrid');
+        grid.innerHTML = '';
+
+        VIP_FONT_STYLES.forEach(style => {
+          const styledText = style.fn(raw);
+          const card = document.createElement('div');
+          card.className = 'rounded-2xl bg-[#08091A] border border-white/10 hover:border-purple-400/50 p-3.5 flex items-center justify-between gap-3 transition';
+
+          const info = document.createElement('div');
+          info.className = 'min-w-0';
+
+          const label = document.createElement('div');
+          label.className = 'text-[10px] font-semibold uppercase tracking-wider text-purple-300/80 mb-1';
+          label.textContent = style.name;
+
+          const preview = document.createElement('div');
+          preview.className = 'text-base sm:text-lg text-white break-words leading-snug';
+          preview.textContent = styledText;
+
+          info.appendChild(label);
+          info.appendChild(preview);
+
+          const copyBtn = document.createElement('button');
+          copyBtn.type = 'button';
+          copyBtn.className = 'shrink-0 px-3.5 py-2 rounded-xl text-xs font-bold bg-purple-500/20 hover:bg-purple-500/35 border border-purple-400/40 text-purple-100 active:scale-95 transition';
+          copyBtn.textContent = '📋 Copy';
+          copyBtn.addEventListener('click', () => {
+            copyTextSafe(styledText, 'स्टाइलिश नाम कॉपी हो गया!');
+            copyBtn.textContent = '✅ Copied';
+            setTimeout(() => { copyBtn.textContent = '📋 Copy'; }, 1400);
+          });
+
+          card.appendChild(info);
+          card.appendChild(copyBtn);
+          grid.appendChild(card);
+        });
+      }
+
+      function renderBioMoods() {
+        const wrap = document.getElementById('bioMoodChips');
+        wrap.innerHTML = '';
+        BIO_MOODS.forEach(m => {
+          const active = m.id === selectedBioMood;
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = active
+            ? 'px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-[0_0_16px_rgba(236,72,153,0.4)] transition'
+            : 'px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white/5 hover:bg-white/10 border border-white/15 text-slate-200 transition';
+          btn.textContent = m.label;
+          btn.addEventListener('click', () => {
+            selectedBioMood = m.id;
+            renderBioMoods();
+            renderBiosList();
+          });
+          wrap.appendChild(btn);
+        });
+      }
+
+      function renderBiosList() {
+        const userName = vipNameInput.value.trim() || 'Royal King';
+        const cleanTag = userName.replace(/[^a-zA-Z0-9]/g, '') || 'Royal';
+        const items = BIO_DATABASE[selectedBioMood] || BIO_DATABASE.attitude;
+        const container = document.getElementById('biosList');
+        container.innerHTML = '';
+
+        items.forEach(item => {
+          const personalized = item.text
+            .replace(/\{NAME\}/g, userName)
+            .replace(/\{TAG\}/g, cleanTag);
+
+          const card = document.createElement('div');
+          card.className = 'rounded-2xl bg-[#08091A] border border-white/10 hover:border-pink-400/45 p-4 flex flex-col justify-between gap-3 transition';
+
+          const top = document.createElement('div');
+          const badge = document.createElement('span');
+          badge.className = 'inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-pink-500/20 text-pink-200 border border-pink-400/30 mb-2.5';
+          badge.textContent = item.tag;
+
+          const body = document.createElement('p');
+          body.className = 'whitespace-pre-line text-xs sm:text-sm text-slate-100 leading-relaxed';
+          body.textContent = personalized;
+
+          top.appendChild(badge);
+          top.appendChild(body);
+
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'w-full py-2.5 rounded-xl text-xs font-bold bg-gradient-to-r from-purple-600/35 to-pink-600/35 hover:from-purple-600/55 hover:to-pink-600/55 border border-pink-400/40 text-white active:scale-95 transition';
+          btn.textContent = '📋 1-Click Copy Bio';
+          btn.addEventListener('click', () => {
+            copyTextSafe(personalized, 'Instagram Bio कॉपी हो गया!');
+            btn.textContent = '✅ कॉपी हो गया!';
+            setTimeout(() => { btn.textContent = '📋 1-Click Copy Bio'; }, 1500);
+          });
+
+          card.appendChild(top);
+          card.appendChild(btn);
+          container.appendChild(card);
+        });
+      }
+
+      function switchNameBioSubtab(subtab) {
+        const btnFonts = document.getElementById('subtab-fonts');
+        const btnBios = document.getElementById('subtab-bios');
+        const panelFonts = document.getElementById('subpanel-fonts');
+        const panelBios = document.getElementById('subpanel-bios');
+
+        if (subtab === 'fonts') {
+          btnFonts.className = 'subtab-btn py-3 px-3 rounded-xl font-bold text-xs sm:text-sm transition bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg';
+          btnBios.className = 'subtab-btn py-3 px-3 rounded-xl font-bold text-xs sm:text-sm transition text-slate-300 hover:text-white hover:bg-white/5';
+          panelFonts.classList.remove('hidden');
+          panelBios.classList.add('hidden');
+        } else {
+          btnBios.className = 'subtab-btn py-3 px-3 rounded-xl font-bold text-xs sm:text-sm transition bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg';
+          btnFonts.className = 'subtab-btn py-3 px-3 rounded-xl font-bold text-xs sm:text-sm transition text-slate-300 hover:text-white hover:bg-white/5';
+          panelBios.classList.remove('hidden');
+          panelFonts.classList.add('hidden');
+        }
+      }
+
+      document.getElementById('subtab-fonts').addEventListener('click', () => switchNameBioSubtab('fonts'));
+      document.getElementById('subtab-bios').addEventListener('click', () => switchNameBioSubtab('bios'));
+
+      vipNameInput.addEventListener('input', () => {
+        renderVipFonts();
+        renderBiosList();
+      });
+
+      document.getElementById('clearVipNameBtn').addEventListener('click', () => {
+        vipNameInput.value = '';
+        renderVipFonts();
+        renderBiosList();
+        vipNameInput.focus();
+      });
+
+      renderVipFonts();
+      renderBioMoods();
+      renderBiosList();
+
+      /* ==========================================================
+         6. TOOL 3: 🎂 MAGIC BIRTHDAY WISH + FULLSCREEN CANVAS SHOW
+         ========================================================== */
+      let selectedBdayTheme = 'gold';
+      const DEFAULT_BDAY_MSG = 'जन्मदिन की ढेर सारी शुभकामनाएँ! भगवान करे आपके सारे सपने पूरे हों और आपकी ज़िंदगी हमेशा खुशियों, कामयाबी और मुस्कान से चमकती रहे! ✨🎂🎉';
+
+      const BDAY_THEMES = {
+        gold: {
+          bg: 'radial-gradient(circle at top, #1E1B4B 0%, #090818 55%, #03030A 100%)',
+          badge: '👑 ROYAL GOLD CELEBRATION 👑',
+          palette: ['#FBBF24', '#FDE047', '#F59E0B', '#FFFBEB', '#FB923C', '#C084FC'],
+          floatType: 'balloon',
+          accentText: 'text-amber-300'
+        },
+        neon: {
+          bg: 'radial-gradient(circle at top, #17103C 0%, #070A1F 55%, #03040E 100%)',
+          badge: '⚡ NEON CYBER BIRTHDAY PARTY ⚡',
+          palette: ['#06B6D4', '#A855F7', '#EC4899', '#22D3EE', '#38BDF8', '#F472B6'],
+          floatType: 'balloon',
+          accentText: 'text-cyan-300'
+        },
+        rose: {
+          bg: 'radial-gradient(circle at top, #4C0519 0%, #1F0614 55%, #090207 100%)',
+          badge: '🌹 HEART & ROSE MAGIC WISH 🌹',
+          palette: ['#FB7185', '#F43F5E', '#FDA4AF', '#F472B6', '#FDE047', '#FFFFFF'],
+          floatType: 'heart',
+          accentText: 'text-pink-300'
+        }
+      };
+
+      // Theme card selection handler
+      document.querySelectorAll('.bday-theme-card').forEach(card => {
+        card.addEventListener('click', () => {
+          selectedBdayTheme = card.dataset.theme;
+          document.querySelectorAll('.bday-theme-card').forEach(c => {
+            const isSel = c.dataset.theme === selectedBdayTheme;
+            c.classList.toggle('border-2', isSel);
+            c.classList.toggle('border', !isSel);
+            c.classList.toggle('border-amber-400', isSel && selectedBdayTheme === 'gold');
+            c.classList.toggle('border-cyan-400', isSel && selectedBdayTheme === 'neon');
+            c.classList.toggle('border-pink-400', isSel && selectedBdayTheme === 'rose');
+            c.classList.toggle('border-white/15', !isSel);
+            c.classList.toggle('scale-[1.02]', isSel);
+          });
+        });
+      });
+
+      function getBirthdayFormData() {
+        const to = document.getElementById('bdayToInput').value.trim() || 'Dear Friend';
+        const from = document.getElementById('bdayFromInput').value.trim() || 'Your Best Friend';
+        const msg = document.getElementById('bdayMsgInput').value.trim() || DEFAULT_BDAY_MSG;
+        return { to, from, theme: selectedBdayTheme, msg };
+      }
+
+      function buildBirthdayShareUrl(data) {
+        const params = new URLSearchParams();
+        params.set('bday', '1');
+        params.set('to', data.to);
+        params.set('from', data.from);
+        params.set('theme', data.theme);
+        if (data.msg && data.msg !== DEFAULT_BDAY_MSG) {
+          params.set('msg', data.msg);
+        }
+        return `${getBaseShareUrl()}?${params.toString()}`;
+      }
+
+      /* ----------------------------------------------------------
+         HIGH-FPS PHYSICS FIREWORKS, CONFETTI & BALLOONS/HEARTS CANVAS
+         ---------------------------------------------------------- */
+      const bdayOverlay = document.getElementById('bdayOverlay');
+      const bdayCanvas = document.getElementById('bdayCanvas');
+      const bdayCtx = bdayCanvas.getContext('2d');
+
+      let bdayAnimId = null;
+      let bdayRunning = false;
+      let activeBdayThemeCfg = BDAY_THEMES.gold;
+      let canvasW = 0;
+      let canvasH = 0;
+
+      let rockets = [];
+      let particles = [];
+      let confetti = [];
+      let floaters = [];
+      let autoLaunchTick = 0;
+
+      function resizeBdayCanvas() {
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        canvasW = window.innerWidth;
+        canvasH = window.innerHeight;
+        bdayCanvas.width = Math.floor(canvasW * dpr);
+        bdayCanvas.height = Math.floor(canvasH * dpr);
+        bdayCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+
+      function randomFrom(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
+      }
+
+      function createExplosion(x, y, power = 1) {
+        const count = Math.floor((42 + Math.random() * 24) * power);
+        const mainColor = randomFrom(activeBdayThemeCfg.palette);
+        const secondaryColor = randomFrom(activeBdayThemeCfg.palette);
+
+        for (let i = 0; i < count; i++) {
+          const angle = (Math.PI * 2 * i) / count + (Math.random() - 0.5) * 0.25;
+          const speed = (1.6 + Math.random() * 4.8) * power;
+          particles.push({
+            x,
+            y,
+            vx: Math.cos(angle) * speed,
+            vy: Math.sin(angle) * speed,
+            alpha: 1,
+            decay: 0.012 + Math.random() * 0.015,
+            size: 1.8 + Math.random() * 2.6,
+            color: i % 3 === 0 ? secondaryColor : mainColor,
+            gravity: 0.045
+          });
+        }
+      }
+
+      function launchRocket(targetX, targetY) {
+        const startX = targetX !== undefined ? targetX : (canvasW * 0.15 + Math.random() * canvasW * 0.7);
+        const destY = targetY !== undefined ? targetY : (canvasH * 0.12 + Math.random() * canvasH * 0.36);
+        rockets.push({
+          x: startX,
+          y: canvasH + 10,
+          vx: (Math.random() - 0.5) * 1.4,
+          vy: -(7.8 + Math.random() * 3.5),
+          targetY: destY,
+          color: randomFrom(activeBdayThemeCfg.palette)
+        });
+      }
+
+      function seedConfettiAndFloaters() {
+        confetti = [];
+        floaters = [];
+
+        for (let i = 0; i < 48; i++) {
+          confetti.push({
+            x: Math.random() * canvasW,
+            y: Math.random() * canvasH,
+            w: 5 + Math.random() * 6,
+            h: 8 + Math.random() * 7,
+            vy: 0.9 + Math.random() * 1.8,
+            vx: (Math.random() - 0.5) * 0.8,
+            rot: Math.random() * Math.PI * 2,
+            vRot: (Math.random() - 0.5) * 0.08,
+            color: randomFrom(activeBdayThemeCfg.palette)
+          });
+        }
+
+        for (let i = 0; i < 14; i++) {
+          floaters.push({
+            x: Math.random() * canvasW,
+            y: canvasH + Math.random() * canvasH * 0.8,
+            size: 14 + Math.random() * 14,
+            vy: 0.6 + Math.random() * 0.9,
+            wobble: Math.random() * Math.PI * 2,
+            color: randomFrom(activeBdayThemeCfg.palette),
+            alpha: 0.45 + Math.random() * 0.35
+          });
+        }
+      }
+
+      function drawHeart(ctx, x, y, size, color, alpha) {
+        ctx.save();
+        ctx.globalAlpha = alpha;
+        ctx.fillStyle = color;
+        ctx.shadowColor = color;
+        ctx.shadowBlur = 12;
+        ctx.beginPath();
+        const topCurveHeight = size * 0.3;
+        ctx.moveTo(x, y + topCurveHeight);
+        ctx.bezierCurveTo(x, y, x - size / 2, y, x - size / 2, y + topCurveHeight);
+        ctx.bezierCurveTo(x - size / 2, y + (size + topCurveHeight) / 2, x, y + (size + topCurveHeight) / 1.4, x, y + size);
+        ctx.bezierCurveTo(x, y + (size + topCurveHeight) / 1.4, x + size / 2, y + (size + topCurveHeight) / 2, x + size / 2, y + topCurveHeight);
+        ctx.bezierCurveTo(x + size / 2, y, x, y, x, y + topCurveHeight);
+        ctx.closePath();
+        ctx.fill();
+        ctx.restore();
+      }
+
+      function drawBalloon(ctx, x, y, size, color, alpha) {
+        ctx.save();
+        ctx.globalAlpha = alpha;
+        ctx.fillStyle = color;
+        ctx.shadowColor = color;
+        ctx.shadowBlur = 10;
+        ctx.beginPath();
+        ctx.ellipse(x, y, size * 0.55, size * 0.72, 0, 0, Math.PI * 2);
+        ctx.fill();
+
+        // String
+        ctx.strokeStyle = 'rgba(255,255,255,0.45)';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(x, y + size * 0.72);
+        ctx.quadraticCurveTo(x + 4, y + size * 1.15, x - 2, y + size * 1.6);
+        ctx.stroke();
+        ctx.restore();
+      }
+
+      function animateBdayCanvas() {
+        if (!bdayRunning) return;
+
+        // Soft trailing clear for glowing firework tails
+        bdayCtx.fillStyle = 'rgba(5, 5, 15, 0.22)';
+        bdayCtx.fillRect(0, 0, canvasW, canvasH);
+
+        // Periodic automatic fireworks
+        autoLaunchTick++;
+        if (autoLaunchTick % 34 === 0) {
+          launchRocket();
+        }
+
+        // Update & draw floating balloons or hearts
+        for (let i = 0; i < floaters.length; i++) {
+          const f = floaters[i];
+          f.y -= f.vy;
+          f.wobble += 0.025;
+          const fx = f.x + Math.sin(f.wobble) * 14;
+          if (f.y < -45) {
+            f.y = canvasH + 35;
+            f.x = Math.random() * canvasW;
+          }
+          i

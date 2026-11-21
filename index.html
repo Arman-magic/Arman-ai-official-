@@ -1,0 +1,1912 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Arman AI Official — Free AI &amp; Smart Tools</title>
+  <meta name="description" content="Students, Instagram Creators और दोस्तों के लिए 100% फ्री स्मार्ट टूलबॉक्स — Magic AI Prompt, VIP Name & Bio और Magic Birthday Wish!" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%2305050f'/%3E%3Cpath d='M32 10L38 26L54 32L38 38L32 54L26 38L10 32L26 26Z' fill='%2306b6d4'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23fff'/%3E%3C/svg%3E" />
+
+  <style>
+    /* ======================== BASE & DESIGN TOKENS ======================== */
+    :root {
+      --bg: #05050f;
+      --surface: rgba(16, 18, 38, 0.78);
+      --surface-solid: #0c0e22;
+      --border: rgba(255, 255, 255, 0.12);
+      --cyan: #06b6d4;
+      --purple: #a855f7;
+      --pink: #ec4899;
+      --gold: #f59e0b;
+      --green: #10b981;
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Devanagari", sans-serif;
+      background:
+        radial-gradient(circle at 12% 10%, rgba(168, 85, 247, 0.22), transparent 42%),
+        radial-gradient(circle at 88% 28%, rgba(6, 182, 212, 0.18), transparent 42%),
+        radial-gradient(circle at 40% 92%, rgba(236, 72, 153, 0.16), transparent 45%),
+        var(--bg);
+      background-attachment: fixed;
+      color: var(--text);
+      line-height: 1.5;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    button, input, textarea {
+      font: inherit;
+      color: inherit;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    /* ======================== ANIMATIONS ======================== */
+    @keyframes hueShift {
+      0% { filter: hue-rotate(0deg) drop-shadow(0 0 8px rgba(6, 182, 212, 0.8)); }
+      50% { filter: hue-rotate(180deg) drop-shadow(0 0 12px rgba(236, 72, 153, 0.9)); }
+      100% { filter: hue-rotate(360deg) drop-shadow(0 0 8px rgba(6, 182, 212, 0.8)); }
+    }
+
+    @keyframes gradFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes spinSlow {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.45; transform: scale(0.8); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes flicker {
+      0%, 100% { transform: scale(1) rotate(-3deg); }
+      50% { transform: scale(1.12, 0.92) rotate(3deg); }
+    }
+
+    @keyframes floatBurst {
+      0% { opacity: 1; transform: translate(0, 0) scale(0.5); }
+      100% { opacity: 0; transform: translate(var(--tx), var(--ty)) scale(1.4) rotate(var(--rot)); }
+    }
+
+    .neon-text {
+      background: linear-gradient(90deg, #06b6d4, #a855f7, #ec4899, #f59e0b, #06b6d4);
+      background-size: 250% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: gradFlow 5s linear infinite;
+    }
+
+    .neon-bg {
+      background: linear-gradient(120deg, #06b6d4, #8b5cf6, #ec4899, #f59e0b);
+      background-size: 240% 240%;
+      animation: gradFlow 6s ease infinite;
+    }
+
+    /* ======================== LAYOUT & HEADER ======================== */
+    .sticky-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(5, 5, 15, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-emblem {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      padding: 2px;
+      background: linear-gradient(135deg, #06b6d4, #a855f7, #ec4899);
+      animation: hueShift 7s linear infinite;
+      flex-shrink: 0;
+    }
+
+    .logo-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      background: #070817;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .logo-ring {
+      position: absolute;
+      width: 34px;
+      height: 34px;
+      animation: spinSlow 10s linear infinite;
+      opacity: 0.55;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.05;
+    }
+
+    .brand-title {
+      font-size: 1.2rem;
+      font-weight: 900;
+      letter-spacing: 0.6px;
+    }
+
+    .official-badge {
+      display: inline-block;
+      margin-top: 3px;
+      width: fit-content;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #cffafe;
+      background: linear-gradient(90deg, rgba(6, 182, 212, 0.28), rgba(168, 85, 247, 0.28));
+      border: 1px solid rgba(6, 182, 212, 0.5);
+      box-shadow: 0 0 10px rgba(6, 182, 212, 0.35);
+    }
+
+    .free-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 11px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      color: #6ee7b7;
+      background: rgba(16, 185, 129, 0.14);
+      border: 1px solid rgba(16, 185, 129, 0.45);
+      white-space: nowrap;
+    }
+
+    .free-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #34d399;
+      animation: pulseDot 1.6s infinite;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 18px 14px 42px;
+    }
+
+    /* ======================== HERO & LIVE SEARCH ======================== */
+    .hero {
+      text-align: center;
+      margin-bottom: 22px;
+    }
+
+    .welcome-pill {
+      display: inline-block;
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #e0f2fe;
+      background: linear-gradient(90deg, rgba(168, 85, 247, 0.24), rgba(6, 182, 212, 0.22));
+      border: 1px solid rgba(6, 182, 212, 0.45);
+      box-shadow: 0 0 18px rgba(168, 85, 247, 0.25);
+      margin-bottom: 14px;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.65rem, 6vw, 2.75rem);
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 14px;
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 auto 18px;
+    }
+
+    .search-wrap {
+      position: relative;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface-solid);
+      border: 1.5px solid rgba(6, 182, 212, 0.45);
+      border-radius: 16px;
+      padding: 4px 12px;
+      box-shadow: 0 0 22px rgba(6, 182, 212, 0.16);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .search-box:focus-within {
+      border-color: #22d3ee;
+      box-shadow: 0 0 28px rgba(6, 182, 212, 0.35);
+    }
+
+    .search-box input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+      padding: 11px 4px;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    .search-clear {
+      display: none;
+      padding: 5px 9px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .search-dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      right: 0;
+      z-index: 45;
+      background: #0b0d24;
+      border: 1px solid rgba(6, 182, 212, 0.5);
+      border-radius: 16px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.72);
+      overflow: hidden;
+      text-align: left;
+    }
+
+    .search-dropdown.open { display: block; animation: fadeUp 0.18s ease; }
+
+    .search-item {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      text-align: left;
+      transition: background 0.15s;
+    }
+
+    .search-item:last-child { border-bottom: none; }
+    .search-item:hover, .search-item:active { background: rgba(6, 182, 212, 0.16); }
+
+    .search-item-title { font-size: 14px; font-weight: 700; color: #fff; }
+    .search-item-sub { font-size: 11.5px; color: var(--muted); }
+    .search-empty { padding: 14px; font-size: 13px; color: var(--muted); text-align: center; }
+
+    /* ======================== 3 SHORTCUT TOOL CARDS ======================== */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    @media (min-width: 720px) {
+      .cards-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .tool-card {
+      position: relative;
+      width: 100%;
+      text-align: left;
+      padding: 15px;
+      border-radius: var(--radius);
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .tool-card:active { transform: scale(0.985); }
+
+    .tool-card.active {
+      border-color: var(--cyan);
+      background: linear-gradient(145deg, rgba(168, 85, 247, 0.22), rgba(6, 182, 212, 0.16));
+      box-shadow: 0 0 26px rgba(6, 182, 212, 0.28);
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .card-body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    /* Clean top row inside card so badges NEVER overlap title text on narrow screens */
+    .card-top-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.25;
+    }
+
+    .card-desc {
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .card-badges {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
+      flex-shrink: 0;
+    }
+
+    .viral-badge {
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      color: #fff;
+      background: linear-gradient(90deg, #f59e0b, #ec4899);
+      box-shadow: 0 2px 10px rgba(236, 72, 153, 0.45);
+      white-space: nowrap;
+    }
+
+    .active-pill {
+      display: none;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 800;
+      color: #05050f;
+      background: #22d3ee;
+      white-space: nowrap;
+    }
+
+    .tool-card.active .active-pill { display: inline-block; }
+
+    /* ======================== WORKSPACE PANEL ======================== */
+    .workspace {
+      scroll-margin-top: 76px;
+      background: var(--surface);
+      border: 1.5px solid rgba(6, 182, 212, 0.35);
+      border-radius: 22px;
+      padding: 16px;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5);
+      margin-bottom: 24px;
+    }
+
+    .ws-topbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .ws-switcher {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .ws-tab-btn {
+      padding: 7px 11px;
+      border-radius: 11px;
+      font-size: 12px;
+      font-weight: 700;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .ws-tab-btn.active {
+      background: linear-gradient(90deg, #06b6d4, #8b5cf6);
+      border-color: transparent;
+      color: #fff;
+    }
+
+    .top-jump-btn {
+      padding: 7px 11px;
+      border-radius: 11px;
+      font-size: 12px;
+      font-weight: 700;
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid var(--border);
+      color: #e2e8f0;
+    }
+
+    .panel { display: none; animation: fadeUp 0.25s ease; }
+    .panel.active { display: block; }
+
+    .panel-head { margin-bottom: 16px; }
+    .panel-head h2 { font-size: 1.25rem; font-weight: 900; margin-bottom: 4px; }
+    .panel-head p { font-size: 13px; color: var(--muted); }
+
+    /* ======================== FORM ELEMENTS & BUTTONS ======================== */
+    .field { margin-bottom: 14px; }
+    .field-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e2e8f0;
+      margin-bottom: 7px;
+    }
+
+    .input-el {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: #070818;
+      border: 1.5px solid rgba(255, 255, 255, 0.14);
+      color: #fff;
+      font-size: 14.5px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .input-el:focus { border-color: var(--cyan); }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      padding: 9px 13px;
+      border-radius: 12px;
+      font-size: 12.5px;
+      font-weight: 700;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border);
+      color: #e2e8f0;
+      transition: 0.18s;
+    }
+
+    .chip.selected {
+      background: linear-gradient(90deg, #06b6d4, #8b5cf6);
+      border-color: transparent;
+      color: #fff;
+      box-shadow: 0 0 14px rgba(6, 182, 212, 0.35);
+    }
+
+    .btn-primary {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 15px;
+      font-size: 15.5px;
+      font-weight: 800;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 8px 24px rgba(139, 92, 246, 0.38);
+      transition: transform 0.15s, filter 0.15s;
+    }
+
+    .btn-primary:active { transform: scale(0.985); }
+
+    .btn-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    @media (min-width: 560px) {
+      .btn-row { grid-template-columns: 1fr 1fr; }
+    }
+
+    .btn-secondary {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 14px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .btn-green {
+      background: linear-gradient(90deg, #10b981, #059669);
+      border: none;
+      box-shadow: 0 6px 18px rgba(16, 185, 129, 0.32);
+    }
+
+    .btn-cyan {
+      background: rgba(6, 182, 212, 0.2);
+      border: 1px solid rgba(6, 182, 212, 0.55);
+      color: #cffafe;
+    }
+
+    /* ======================== TOOL 1 OUTPUT ======================== */
+    .output-wrap {
+      display: none;
+      margin-top: 16px;
+      padding: 14px;
+      border-radius: 16px;
+      background: #060714;
+      border: 1.5px solid rgba(6, 182, 212, 0.45);
+      animation: fadeUp 0.25s ease;
+    }
+
+    .output-wrap.show { display: block; }
+
+    .output-pre {
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-size: 13px;
+      color: #e2e8f0;
+      max-height: 290px;
+      overflow-y: auto;
+      line-height: 1.6;
+    }
+
+    /* ======================== TOOL 2 SUBTABS & LISTS ======================== */
+    .subtabs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      padding: 6px;
+      border-radius: 15px;
+      background: #070818;
+      border: 1px solid var(--border);
+      margin-bottom: 15px;
+    }
+
+    .subtab-btn {
+      padding: 10px 8px;
+      border-radius: 11px;
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--muted);
+    }
+
+    .subtab-btn.active {
+      background: linear-gradient(90deg, #9333ea, #ec4899);
+      color: #fff;
+    }
+
+    .grid-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    @media (min-width: 640px) {
+      .grid-list { grid-template-columns: 1fr 1fr; }
+    }
+
+    .copy-card {
+      background: #070818;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .bio-card {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .copy-label {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #d8b4fe;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .copy-preview {
+      font-size: 15px;
+      color: #fff;
+      word-break: break-word;
+      white-space: pre-line;
+    }
+
+    .mini-copy-btn {
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 800;
+      background: rgba(168, 85, 247, 0.22);
+      border: 1px solid rgba(168, 85, 247, 0.5);
+      color: #f3e8ff;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ======================== TOOL 3 THEME BUTTONS ======================== */
+    .theme-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .theme-btn {
+      padding: 11px 8px;
+      border-radius: 14px;
+      background: #070818;
+      border: 1.5px solid var(--border);
+      text-align: center;
+      font-size: 12px;
+      font-weight: 800;
+      color: #e2e8f0;
+      transition: 0.18s;
+    }
+
+    .theme-btn.selected[data-theme="gold"] {
+      border-color: #f59e0b;
+      background: rgba(245, 158, 11, 0.2);
+      color: #fde68a;
+    }
+
+    .theme-btn.selected[data-theme="neon"] {
+      border-color: #06b6d4;
+      background: rgba(6, 182, 212, 0.2);
+      color: #cffafe;
+    }
+
+    .theme-btn.selected[data-theme="rose"] {
+      border-color: #ec4899;
+      background: rgba(236, 72, 153, 0.22);
+      color: #fbcfe8;
+    }
+
+    /* ======================== THANK YOU & FOOTER ======================== */
+    .thank-wrap {
+      padding: 1.5px;
+      border-radius: 22px;
+      margin-bottom: 20px;
+    }
+
+    .thank-card {
+      background: rgba(8, 9, 24, 0.94);
+      border-radius: 20.5px;
+      padding: 24px 16px;
+      text-align: center;
+    }
+
+    .thank-card h2 { font-size: 1.2rem; font-weight: 900; margin-bottom: 8px; }
+    .thank-card p { font-size: 13.5px; color: var(--muted); margin-bottom: 16px; }
+
+    .thank-btn {
+      padding: 13px 20px;
+      border-radius: 15px;
+      font-size: 14.5px;
+      font-weight: 800;
+      color: #fff;
+      background: linear-gradient(90deg, #ec4899, #8b5cf6, #06b6d4);
+      box-shadow: 0 6px 22px rgba(236, 72, 153, 0.4);
+    }
+
+    .footer {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 20px 16px;
+      text-align: center;
+    }
+
+    .footer-credit {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* ======================== TOASTS & PARTICLES ======================== */
+    .welcome-toast {
+      position: fixed;
+      top: 68px;
+      left: 50%;
+      transform: translate(-50%, -18px);
+      z-index: 80;
+      width: calc(100% - 28px);
+      max-width: 420px;
+      padding: 12px 14px;
+      border-radius: 15px;
+      background: rgba(10, 12, 32, 0.95);
+      border: 1px solid rgba(6, 182, 212, 0.6);
+      box-shadow: 0 10px 30px rgba(6, 182, 212, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 13.5px;
+      font-weight: 700;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s, transform 0.35s;
+    }
+
+    .welcome-toast.show {
+      opacity: 1;
+      transform: translate(-50%, 0);
+      pointer-events: auto;
+    }
+
+    .action-toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translate(-50%, 16px);
+      z-index: 140;
+      padding: 11px 18px;
+      border-radius: 14px;
+      background: #0b1128;
+      border: 1px solid rgba(6, 182, 212, 0.65);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.65);
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #cffafe;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s, transform 0.25s;
+      max-width: 92vw;
+      text-align: center;
+    }
+
+    .action-toast.show {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+
+    .burst-item {
+      position: fixed;
+      pointer-events: none;
+      z-index: 150;
+      font-size: 22px;
+      animation: floatBurst 1.2s ease-out forwards;
+    }
+
+    /* ======================== FULL-SCREEN BIRTHDAY OVERLAY ======================== */
+    .bday-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 120;
+      overflow-y: auto;
+      background: #05050f;
+    }
+
+    .bday-overlay.open {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    #bdayCanvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      z-index: 1;
+    }
+
+    .bday-top, .bday-center, .bday-bottom {
+      position: relative;
+      z-index: 5;
+      width: 100%;
+      max-width: 460px;
+      margin: 0 auto;
+      padding: 14px 16px;
+    }
+
+    .bday-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .bday-pill-btn {
+      padding: 10px 14px;
+      border-radius: 13px;
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      backdrop-filter: blur(8px);
+    }
+
+    .bday-center {
+      text-align: center;
+      margin: auto;
+      pointer-events: none;
+    }
+
+    /* Pure CSS Glowing Animated Birthday Cake */
+    .cake-box {
+      position: relative;
+      width: 146px;
+      height: 126px;
+      margin: 0 auto 16px;
+      pointer-events: auto;
+      cursor: pointer;
+    }
+
+    .candles {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      position: relative;
+      z-index: 3;
+      margin-bottom: -4px;
+    }
+
+    .candle {
+      width: 10px;
+      height: 28px;
+      border-radius: 4px;
+      background: linear-gradient(#38bdf8, #8b5cf6);
+      position: relative;
+    }
+
+    .candle:nth-child(2) { height: 34px; margin-top: -6px; background: linear-gradient(#f472b6, #ec4899); }
+    .candle:nth-child(3) { background: linear-gradient(#fde047, #f59e0b); }
+
+    .flame {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      width: 10px;
+      height: 15px;
+      margin-left: -5px;
+      border-radius: 50% 50% 50% 50% / 65% 65% 35% 35%;
+      background: radial-gradient(circle at 50% 70%, #fff, #fde047 55%, #f97316);
+      box-shadow: 0 0 14px #fde047, 0 0 24px #f97316;
+      animation: flicker 0.45s infinite alternate;
+    }
+
+    .tier-top {
+      width: 96px;
+      height: 34px;
+      margin: 0 auto;
+      border-radius: 10px 10px 4px 4px;
+      background: linear-gradient(135deg, #ec4899, #8b5cf6);
+      border-top: 6px solid #fdf2f8;
+      box-shadow: 0 0 18px rgba(236, 72, 153, 0.55);
+    }
+
+    .tier-bottom {
+      width: 136px;
+      height: 44px;
+      margin: 0 auto;
+      border-radius: 10px 10px 12px 12px;
+      background: linear-gradient(135deg, #6366f1, #06b6d4);
+      border-top: 6px solid #fde047;
+      box-shadow: 0 0 24px rgba(6, 182, 212, 0.55);
+    }
+
+    .cake-plate {
+      width: 152px;
+      height: 10px;
+      margin: 2px auto 0;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #475569, #e2e8f0, #475569);
+    }
+
+    .bday-headline {
+      font-size: clamp(1.7rem, 7vw, 2.5rem);
+      font-weight: 900;
+      color: #fff;
+      text-shadow: 0 0 22px rgba(255, 255, 255, 0.6);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .bday-card {
+      padding: 18px 16px;
+      border-radius: 20px;
+      background: rgba(0, 0, 0, 0.52);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      backdrop-filter: blur(10px);
+      margin-bottom: 10px;
+    }
+
+    .bday-msg { font-size: 14.5px; color: #f1f5f9; margin-bottom: 10px; }
+    .bday-from { font-size: 14px; font-weight: 800; color: #fde047; }
+    .bday-hint { font-size: 12px; color: #e2e8f0; opacity: 0.9; }
+    .bday-bottom { text-align: center; padding-bottom: 22px; }
+  </style>
+</head>
+
+<body>
+  <!-- First-Visit Animated Welcome Toast -->
+  <div id="welcomeToast" class="welcome-toast" role="status">
+    <span>✨ Arman AI Official में आपका स्वागत है!</span>
+    <button type="button" id="closeWelcomeBtn" aria-label="बंद करें" style="font-weight:900;padding:2px 6px;">✕</button>
+  </div>
+
+  <!-- Action Toast Feedback -->
+  <div id="actionToast" class="action-toast" role="status"></div>
+
+  <!-- 1. TOP STICKY HEADER -->
+  <header class="sticky-header" id="top">
+    <div class="header-inner">
+      <a href="#top" class="brand">
+        <div class="logo-emblem" aria-hidden="true">
+          <div class="logo-inner">
+            <svg class="logo-ring" viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="16" stroke="#06b6d4" stroke-width="1.6" stroke-dasharray="5 4" />
+            </svg>
+            <svg width="24" height="24" viewBox="0 0 40 40" fill="none">
+              <path d="M20 4L24.5 15.5L36 20L24.5 24.5L20 36L15.5 24.5L4 20L15.5 15.5Z" fill="#22d3ee" />
+              <circle cx="20" cy="20" r="3.8" fill="#ffffff" />
+            </svg>
+          </div>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title neon-text">Arman AI</span>
+          <span class="official-badge">OFFICIAL</span>
+        </div>
+      </a>
+      <span class="free-pill"><span class="free-dot"></span> 100% FREE</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 2. HERO & LIVE SEARCH -->
+    <section class="hero">
+      <div class="welcome-pill">✨ Welcome to Arman AI Official — आपका दिल से स्वागत है!</div>
+      <h1><span class="neon-text">All-in-One Free AI</span> &amp; Smart Tools</h1>
+      <p>Students, Instagram Creators और दोस्तों के लिए 100% फ्री स्मार्ट टूलबॉक्स — यहाँ हर टूल फ्री है, अपना काम आसान बनाएँ और जादू देखें!</p>
+
+      <!-- 3. WORKING LIVE SEARCH BAR WITH DROPDOWN -->
+      <div class="search-wrap" id="searchWrap">
+        <div class="search-box">
+          <span aria-hidden="true">🔍</span>
+          <input id="searchInput" type="text" autocomplete="off" placeholder="क्या चाहिए? खोजें... (Prompt, Name, Bio, Birthday, YouTube)" />
+          <button type="button" id="searchClearBtn" class="search-clear" aria-label="साफ़ करें">✕</button>
+        </div>
+        <div id="searchDropdown" class="search-dropdown"></div>
+      </div>
+    </section>
+
+    <!-- 4. THREE SHORTCUT TOOL CARDS -->
+    <section class="cards-grid" aria-label="Smart Tools">
+      <button type="button" class="tool-card active" data-tool="prompt">
+        <div class="card-icon">🤖</div>
+        <div class="card-body">
+          <div class="card-top-row">
+            <span class="card-title">Magic AI Prompt</span>
+            <div class="card-badges">
+              <span class="active-pill">Active</span>
+            </div>
+          </div>
+          <div class="card-desc">बोलो क्या चाहिए, AI के लिए बेस्ट कमांड तैयार</div>
+        </div>
+      </button>
+
+      <button type="button" class="tool-card" data-tool="namebio">
+        <div class="card-icon">✨</div>
+        <div class="card-body">
+          <div class="card-top-row">
+            <span class="card-title">VIP Name &amp; Bio</span>
+            <div class="card-badges">
+              <span class="active-pill">Active</span>
+            </div>
+          </div>
+          <div class="card-desc">स्टाइलिश नाम, शायरी और इंस्टाग्राम बायो</div>
+        </div>
+      </button>
+
+      <button type="button" class="tool-card" data-tool="birthday">
+        <div class="card-icon">🎂</div>
+        <div class="card-body">
+          <div class="card-top-row">
+            <span class="card-title">Magic Birthday Wish</span>
+            <div class="card-badges">
+              <span class="viral-badge">🔥 VIRAL</span>
+              <span class="active-pill">Active</span>
+            </div>
+          </div>
+          <div class="card-desc">नाम डालो, आतिशबाज़ी वाला बर्थडे लिंक भेजो</div>
+        </div>
+      </button>
+    </section>
+
+    <!-- 5. ACTIVE WORKSPACE PANEL -->
+    <section class="workspace" id="workspace">
+      <div class="ws-topbar">
+        <div class="ws-switcher">
+          <button type="button" class="ws-tab-btn active" data-tool="prompt">🤖 AI Prompt</button>
+          <button type="button" class="ws-tab-btn" data-tool="namebio">✨ Name &amp; Bio</button>
+          <button type="button" class="ws-tab-btn" data-tool="birthday">🎂 Birthday</button>
+        </div>
+        <button type="button" id="scrollTopBtn" class="top-jump-btn">↑ ऊपर जाएँ</button>
+      </div>
+
+      <!-- TOOL 1: MAGIC AI PROMPT -->
+      <div id="panel-prompt" class="panel active">
+        <div class="panel-head">
+          <h2>🤖 Magic AI Prompt</h2>
+          <p>कैटेगरी, टॉपिक और स्टाइल चुनें — 1 क्लिक में प्रो-लेवल English AI Prompt पाएँ।</p>
+        </div>
+
+        <div class="field">
+          <span class="field-label">1. कैटेगरी चुनें (Category):</span>
+          <div id="promptCats" class="chips"></div>
+        </div>
+
+        <div class="field">
+          <label class="field-label" for="promptTopic">2. आपका टॉपिक (हिंदी या English में लिखें):</label>
+          <input id="promptTopic" class="input-el" type="text" placeholder="जैसे: YouTube Shorts वायरल टिप्स, चाय बिज़नेस, Class 12 नोट्स..." />
+        </div>
+
+        <div class="field">
+          <span class="field-label">3. स्टाइल / टोन चुनें (Style / Tone):</span>
+          <div id="promptTones" class="chips"></div>
+        </div>
+
+        <button type="button" id="genPromptBtn" class="btn-primary neon-bg">✨ Magic Prompt बनाएँ</button>
+
+        <div id="promptOutputBox" class="output-wrap">
+          <div class="copy-label" style="color:#6ee7b7;margin-bottom:8px;">⚡ Ready-to-Use English AI Prompt:</div>
+          <pre id="promptOutputText" class="output-pre"></pre>
+          <div class="btn-row">
+            <button type="button" id="copyPromptBtn" class="btn-secondary btn-cyan">📋 Copy Prompt</button>
+            <button type="button" id="openChatBtn" class="btn-secondary btn-green">🚀 Open in ChatGPT</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOOL 2: VIP NAME & BIO -->
+      <div id="panel-namebio" class="panel">
+        <div class="panel-head">
+          <h2>✨ VIP Name &amp; Bio</h2>
+          <p>अपना नाम लिखें — 16+ VIP स्टाइलिश फोंट्स और शानदार Instagram Bio तुरंत कॉपी करें।</p>
+        </div>
+
+        <div class="field">
+          <label class="field-label" for="vipNameInput">अपना नाम लिखें (Live Preview):</label>
+          <input id="vipNameInput" class="input-el" type="text" value="Arman" maxlength="36" placeholder="अपना नाम लिखें..." />
+        </div>
+
+        <div class="subtabs">
+          <button type="button" id="subFontsBtn" class="subtab-btn active">✨ Stylish Fonts (16+)</button>
+          <button type="button" id="subBiosBtn" class="subtab-btn">🔥 VIP Bio &amp; Shayari</button>
+        </div>
+
+        <div id="subFontsBox" class="grid-list"></div>
+        <div id="subBiosBox" class="grid-list" style="display:none;"></div>
+      </div>
+
+      <!-- TOOL 3: MAGIC BIRTHDAY WISH -->
+      <div id="panel-birthday" class="panel">
+        <div class="panel-head">
+          <h2>🎂 Magic Birthday Wish</h2>
+          <p>नाम डालो — असली आतिशबाज़ी, जलती मोमबत्ती वाला केक और म्यूज़िक के साथ मैजिक लिंक तैयार!</p>
+        </div>
+
+        <div class="field">
+          <label class="field-label" for="bdayNameInput">🎉 जिसका बर्थडे है उसका नाम (Birthday Person):</label>
+          <input id="bdayNameInput" class="input-el" type="text" maxlength="32" placeholder="जैसे: Rahul, Priya, Aman..." />
+        </div>
+
+        <div class="field">
+          <label class="field-label" for="bdayFromInput">❤️ आपका नाम (Sender Name):</label>
+          <input id="bdayFromInput" class="input-el" type="text" maxlength="32" placeholder="जैसे: Arman..." />
+        </div>
+
+        <div class="field">
+          <span class="field-label">🎨 थीम चुनें (Choose Theme):</span>
+          <div class="theme-grid" id="bdayThemeGrid">
+            <button type="button" class="theme-btn selected" data-theme="gold">👑 Royal Gold</button>
+            <button type="button" class="theme-btn" data-theme="neon">⚡ Neon Cyber</button>
+            <button type="button" class="theme-btn" data-theme="rose">❤️ Heart &amp; Rose</button>
+          </div>
+        </div>
+
+        <button type="button" id="liveBdayBtn" class="btn-primary neon-bg">🎆 जादू देखें (Live Show)</button>
+
+        <div class="btn-row">
+          <button type="button" id="waBdayBtn" class="btn-secondary btn-green">📲 WhatsApp पर मैजिक लिंक भेजें</button>
+          <button type="button" id="copyBdayBtn" class="btn-secondary btn-cyan">🔗 Magic Link कॉपी करें</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. INTERACTIVE THANK YOU CARD -->
+    <section class="thank-wrap neon-bg">
+      <div class="thank-card">
+        <h2>🙏 Thank You for Visiting! — <span class="neon-text">दिल से धन्यवाद!</span></h2>
+        <p>अपना कीमती समय देने के लिए बहुत-बहुत शुक्रिया। उम्मीद है हमारे टूल्स आपके काम आए होंगे!</p>
+        <button type="button" id="thankBtn" class="thank-btn">❤️ धन्यवाद स्वीकार करें (Tap Me)</button>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <button type="button" id="shareAppBtn" class="btn-secondary btn-green" style="max-width:340px;margin:0 auto;">📲 WhatsApp पर दोस्तों को भेजें</button>
+      <div class="footer-credit">Designed &amp; Built by <span class="neon-text">Arman</span> | Arman AI Official</div>
+    </footer>
+  </main>
+
+  <!-- FULL-SCREEN INTERACTIVE BIRTHDAY SURPRISE OVERLAY -->
+  <div id="bdayOverlay" class="bday-overlay" role="dialog" aria-modal="true">
+    <canvas id="bdayCanvas"></canvas>
+
+    <div class="bday-top">
+      <button type="button" id="bdayMusicBtn" class="bday-pill-btn">🎵 बर्थडे म्यूज़िक बजाएँ</button>
+      <button type="button" id="bdayCloseBtn" class="bday-pill-btn">✖ बंद करें</button>
+    </div>
+
+    <div class="bday-center">
+      <div id="bdayCake" class="cake-box" title="केक पर टच करें!">
+        <div class="candles">
+          <div class="candle"><span class="flame"></span></div>
+          <div class="candle"><span class="flame"></span></div>
+          <div class="candle"><span class="flame"></span></div>
+        </div>
+        <div class="tier-top"></div>
+        <div class="tier-bottom"></div>
+        <div class="cake-plate"></div>
+      </div>
+
+      <h2 id="bdayHeadline" class="bday-headline">Happy Birthday! 🎉</h2>
+      <div class="bday-card">
+        <p class="bday-msg">जन्मदिन की ढेर सारी शुभकामनाएँ! भगवान करे आपके सारे सपने पूरे हों और ज़िंदगी हमेशा खुशियों से चमकती रहे! ✨🎂</p>
+        <p id="bdayFromLabel" class="bday-from">Best Wishes from Your Friend ❤️</p>
+      </div>
+      <div class="bday-hint">✨ स्क्रीन या केक पर कहीं भी टच करें — आतिशबाज़ी फूटेगी!</div>
+    </div>
+
+    <div class="bday-bottom">
+      <button type="button" id="bdayMakeOwnBtn" class="btn-primary neon-bg">✨ अपना फ्री बर्थडे कार्ड बनाएँ</button>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+
+      /* ======================== UTILITIES ======================== */
+      const $ = (id) => document.getElementById(id);
+      let toastTimer = null;
+
+      function showToast(msg) {
+        const el = $('actionToast');
+        if (!el) return;
+        el.textContent = msg;
+        el.classList.add('show');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => el.classList.remove('show'), 2400);
+      }
+
+      // Ultra-reliable copy function for mobile browsers & iFrames
+      function copyText(text, okMsg) {
+        let done = false;
+        try {
+          const ta = document.createElement('textarea');
+          ta.value = text;
+          ta.setAttribute('readonly', '');
+          ta.style.position = 'fixed';
+          ta.style.top = '-9999px';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.focus();
+          ta.select();
+          ta.setSelectionRange(0, text.length);
+          done = document.execCommand('copy');
+          document.body.removeChild(ta);
+        } catch (e) { done = false; }
+
+        if (done) {
+          showToast(okMsg || '✅ कॉपी हो गया!');
+          return;
+        }
+        try {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text)
+              .then(() => showToast(okMsg || '✅ कॉपी हो गया!'))
+              .catch(() => showToast('ℹ️ टेक्स्ट चुनकर कॉपी करें'));
+            return;
+          }
+        } catch (e) {}
+        showToast('ℹ️ टेक्स्ट चुनकर कॉपी करें');
+      }
+
+      function getBaseUrl() {
+        try {
+          if (location.protocol === 'http:' || location.protocol === 'https:') {
+            return location.origin + location.pathname;
+          }
+        } catch (e) {}
+        return 'https://arman-magic.github.io/Arman-ai-official-/';
+      }
+
+      /* ======================== WELCOME TOAST ======================== */
+      function showWelcome() {
+        const wt = $('welcomeToast');
+        if (!wt) return;
+        setTimeout(() => wt.classList.add('show'), 250);
+        setTimeout(() => wt.classList.remove('show'), 3800);
+      }
+      $('closeWelcomeBtn').addEventListener('click', () => $('welcomeToast').classList.remove('show'));
+
+      /* ======================== TOOL SWITCHING & AUTO-SCROLL ======================== */
+      function openTool(toolId, scroll) {
+        document.querySelectorAll('.tool-card').forEach((c) => {
+          c.classList.toggle('active', c.dataset.tool === toolId);
+        });
+        document.querySelectorAll('.ws-tab-btn').forEach((b) => {
+          b.classList.toggle('active', b.dataset.tool === toolId);
+        });
+        document.querySelectorAll('.panel').forEach((p) => {
+          p.classList.toggle('active', p.id === 'panel-' + toolId);
+        });
+        if (scroll) {
+          const ws = $('workspace');
+          if (ws && ws.scrollIntoView) {
+            ws.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      }
+
+      document.querySelectorAll('.tool-card').forEach((card) => {
+        card.addEventListener('click', () => openTool(card.dataset.tool, true));
+      });
+      document.querySelectorAll('.ws-tab-btn').forEach((btn) => {
+        btn.addEventListener('click', () => openTool(btn.dataset.tool, false));
+      });
+      $('scrollTopBtn').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+      /* ======================== LIVE SEARCH & INSTANT DROPDOWN ======================== */
+      const searchItems = [
+        { title: '🎬 YouTube Video Prompt', sub: 'Magic AI Prompt • Viral Script', keys: 'youtube video script prompt ai command यूट्यूब वीडियो कमांड', tool: 'prompt', cat: 'YouTube Video' },
+        { title: '🎨 Photo Editing Prompt', sub: 'Magic AI Prompt • Image Art', keys: 'photo image art edit ai prompt फोटो एडिटिंग इमेज', tool: 'prompt', cat: 'Photo Editing' },
+        { title: '📱 Instagram Reel Prompt', sub: 'Magic AI Prompt • Short Script', keys: 'instagram reel short viral hook prompt इंस्टाग्राम रील', tool: 'prompt', cat: 'Instagram Reel' },
+        { title: '📚 Study & Exam Notes Prompt', sub: 'Magic AI Prompt • Student Helper', keys: 'study exam notes student padhai prompt पढ़ाई एग्जाम नोट्स', tool: 'prompt', cat: 'Study & Exam' },
+        { title: '💼 Business Idea Prompt', sub: 'Magic AI Prompt • Startup Plan', keys: 'business idea startup money dukan prompt बिज़नेस दुकान', tool: 'prompt', cat: 'Business Idea' },
+        { title: '💻 Coding / Python Prompt', sub: 'Magic AI Prompt • Code Helper', keys: 'coding python app website html code prompt कोडिंग पायथन', tool: 'prompt', cat: 'Coding/Python' },
+        { title: '✨ VIP Stylish Name Fonts', sub: 'VIP Name & Bio • 16+ Fonts', keys: 'name font stylish vip fancy text नाम स्टाइलिश फोंट', tool: 'namebio', subtab: 'fonts' },
+        { title: '🔥 Instagram Bio & Hindi Shayari', sub: 'VIP Name & Bio • Attitude & Motivation', keys: 'bio shayari instagram attitude motivation status बायो शायरी इंस्टाग्राम', tool: 'namebio', subtab: 'bios' },
+        { title: '🎂 Magic Birthday Wish & Fireworks', sub: 'Live Fireworks, Cake & Music Link', keys: 'birthday wish cake fireworks happy bday card link बर्थडे केक जन्मदिन आतिशबाज़ी', tool: 'birthday' }
+      ];
+
+      const searchInput = $('searchInput');
+      const searchDropdown = $('searchDropdown');
+      const searchClearBtn = $('searchClearBtn');
+
+      function renderSearch() {
+        const q = searchInput.value.trim().toLowerCase();
+        searchClearBtn.style.display = q ? 'inline-block' : 'none';
+        if (!q) {
+          searchDropdown.classList.remove('open');
+          searchDropdown.innerHTML = '';
+          return;
+        }
+        const matches = searchItems.filter((item) =>
+          item.keys.toLowerCase().includes(q) || item.title.toLowerCase().includes(q)
+        );
+        searchDropdown.innerHTML = '';
+        if (!matches.length) {
+          searchDropdown.innerHTML = '<div class="search-empty">कोई सीधा मिलान नहीं मिला — नीचे के 3 टूल्स ट्राई करें ✨</div>';
+        } else {
+          matches.forEach((m) => {
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'search-item';
+            btn.innerHTML = '<div><div class="search-item-title">' + m.title + '</div><div class="search-item-sub">' + m.sub + '</div></div><span style="color:#22d3ee;font-weight:900;">→</span>';
+            btn.addEventListener('click', () => {
+              if (m.cat) selectPromptCat(m.cat);
+              if (m.subtab) switchNameSubtab(m.subtab);
+              openTool(m.tool, true);
+              searchInput.value = '';
+              searchClearBtn.style.display = 'none';
+              searchDropdown.classList.remove('open');
+            });
+            searchDropdown.appendChild(btn);
+          });
+        }
+        searchDropdown.classList.add('open');
+      }
+
+      searchInput.addEventListener('input', renderSearch);
+      searchInput.addEventListener('focus', () => { if (searchInput.value.trim()) renderSearch(); });
+      searchClearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        renderSearch();
+        searchInput.focus();
+      });
+      document.addEventListener('click', (e) => {
+        if (!$('searchWrap').contains(e.target)) searchDropdown.classList.remove('open');
+      });
+
+      /* ======================== TOOL 1: MAGIC AI PROMPT ======================== */
+      const promptCategories = ['YouTube Video', 'Photo Editing', 'Instagram Reel', 'Study & Exam', 'Business Idea', 'Coding/Python'];
+      const promptTones = ['Professional', 'Viral/Trendy', 'Simple/Easy', 'Cinematic'];
+      let activeCat = 'YouTube Video';
+      let activeTone = 'Viral/Trendy';
+      let lastPrompt = '';
+
+      function renderPromptOptions() {
+        const catBox = $('promptCats');
+        catBox.innerHTML = '';
+        promptCategories.forEach((c) => {
+          const b = document.createElement('button');
+          b.type = 'button';
+          b.className = 'chip' + (c === activeCat ? ' selected' : '');
+          b.textContent = c;
+          b.addEventListener('click', () => selectPromptCat(c));
+          catBox.appendChild(b);
+        });
+
+        const toneBox = $('promptTones');
+        toneBox.innerHTML = '';
+        promptTones.forEach((t) => {
+          const b = document.createElement('button');
+          b.type = 'button';
+          b.className = 'chip' + (t === activeTone ? ' selected' : '');
+          b.textContent = t;
+          b.addEventListener('click', () => { activeTone = t; renderPromptOptions(); });
+          toneBox.appendChild(b);
+        });
+      }
+
+      function selectPromptCat(cat) {
+        activeCat = cat;
+        renderPromptOptions();
+      }
+
+      function createPromptText(cat, topic, tone) {
+        const t = topic || 'Success & Smart Habits';
+        const guides = {
+          'YouTube Video': 'Act as an expert YouTube Scriptwriter. Write a high-retention video script on "' + t + '" in a ' + tone + ' tone.\n\nInclude:\n1. Scroll-stopping 15-second Hook\n2. Clear intro & promise\n3. 4 structured main chapters with [VISUAL] & B-roll cues\n4. Powerful outro with natural subscribe CTA\n5. 3 high-CTR Titles & 2 bold Thumbnail text ideas.',
+          'Photo Editing': 'Act as a master AI Image Prompt Engineer (Midjourney / Gemini / Ideogram). Create an ultra-detailed image generation prompt for: "' + t + '" with a ' + tone + ' visual style.\n\nInclude:\n1. Sharp foreground subject & natural expression\n2. Rich atmospheric background & depth\n3. Dramatic volumetric lighting & balanced color grading\n4. 85mm f/1.4 lens specs, 8K photorealistic clarity\n5. Provide 1 main prompt + 1 creative variation + negative prompt.',
+          'Instagram Reel': 'Act as a Viral Instagram Reels Strategist. Write 3 punchy 30-to-45 second Reel scripts about "' + t + '" in a ' + tone + ' style.\n\nFor each script include:\n1. 3-second viral spoken + on-screen text hook\n2. Fast-paced storytelling body\n3. High-engagement comment/share CTA\n4. Background music vibe, catchy caption & 10 targeted hashtags.',
+          'Study & Exam': 'Act as an expert Topper Mentor & Teacher. Create complete, crystal-clear exam notes on "' + t + '" in a ' + tone + ' style.\n\nInclude:\n1. 2-minute beginner-friendly summary with real-life example\n2. Bullet-point key concepts & formulas\n3. Smart memory tricks / mnemonics\n4. 5 most likely exam questions with model answers\n5. 5 practice MCQs with answer key at the bottom.',
+          'Business Idea': 'Act as a practical Indian Startup & Small Business Advisor. Build a step-by-step low-budget business plan for "' + t + '" in a ' + tone + ' tone.\n\nInclude:\n1. Target customers & demand\n2. Week 1 to Week 4 launch roadmap\n3. Realistic investment, pricing & monthly profit breakdown\n4. Free WhatsApp & Instagram marketing ideas for first 25 customers\n5. Top 3 beginner mistakes to avoid.',
+          'Coding/Python': 'Act as a Senior Software Engineer & Python Mentor. Help me build a clean, working solution for "' + t + '" explained in a ' + tone + ' style.\n\nInclude:\n1. Simple step-by-step logic breakdown\n2. Complete, well-commented, error-free runnable code\n3. Easy instructions to run on mobile or PC\n4. Common bugs & quick fixes\n5. 2 cool upgrade ideas to level up the project.'
+        };
+        return guides[cat] || guides['YouTube Video'];
+      }
+
+      $('genPromptBtn').addEventListener('click', () => {
+        const topic = $('promptTopic').value.trim();
+        if (!topic) {
+          showToast('✍️ कृपया पहले अपना टॉपिक लिखें!');
+          $('promptTopic').focus();
+          return;
+        }
+        lastPrompt = createPromptText(activeCat, topic, activeTone);
+        $('promptOutputText').textContent = lastPrompt;
+        $('promptOutputBox').classList.add('show');
+        showToast('✨ Magic Prompt तैयार है!');
+      });
+
+      $('copyPromptBtn').addEventListener('click', () => {
+        if (lastPrompt) copyText(lastPrompt, '📋 Magic Prompt कॉपी हो गया!');
+      });
+
+      $('openChatBtn').addEventListener('click', () => {
+        if (!lastPrompt) return;
+        copyText(lastPrompt, '🚀 Prompt कॉपी हो गया! ChatGPT खुल रहा है...');
+        setTimeout(() => window.open('https://chatgpt.com/', '_blank', 'noopener'), 220);
+      });
+
+      renderPromptOptions();
+
+      /* ======================== TOOL 2: VIP NAME & BIO ======================== */
+      const UP = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      const LO = 'abcdefghijklmnopqrstuvwxyz';
+      const DI = '0123456789';
+
+      function mapChars(str, u, l, d) {
+        const ua = Array.from(u), la = Array.from(l), da = d ? Array.from(d) : null;
+        return Array.from(str).map((ch) => {
+          const ui = UP.indexOf(ch); if (ui > -1 && ua[ui]) return ua[ui];
+          const li = LO.indexOf(ch); if (li > -1 && la[li]) return la[li];
+          const di = DI.indexOf(ch); if (di > -1 && da && da[di]) return da[di];
+          return ch;
+        }).join('');
+      }
+
+      const F = {
+        bold: ['𝐀𝐁𝐂𝐃𝐄𝐅𝐆𝐇𝐈𝐉𝐊𝐋𝐌𝐍𝐎𝐏𝐐𝐑𝐒𝐓𝐔𝐕𝐖𝐗𝐘𝐙', '𝐚𝐛𝐜𝐝𝐞𝐟𝐠𝐡𝐢𝐣𝐤𝐥𝐦𝐧𝐨𝐩𝐪𝐫𝐬𝐭𝐮𝐯𝐰𝐱𝐲𝐳', '𝟎𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗'],
+        sans: ['𝗔𝗕𝗖𝗗𝗘𝗙𝗚𝗛𝗜𝗝𝗞𝗟𝗠𝗡𝗢𝗣𝗤𝗥𝗦𝗧𝗨𝗩𝗪𝗫𝗬𝗭', '𝗮𝗯𝗰𝗱𝗲𝗳𝗴𝗵𝗶𝗷𝗸𝗹𝗺𝗻𝗼𝗽𝗾𝗿𝘀𝘁𝘂𝘃𝘄𝘅𝘆𝘇', '𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵'],
+        fraktur: ['𝕬𝕭𝕮𝕯𝕰𝕱𝕲𝕳𝕴𝕵𝕶𝕷𝕸𝕹𝕺𝕻𝕼𝕽𝕾𝕿𝖀𝖁𝖂𝖃𝖄𝖅', '𝖆𝖇𝖈𝖉𝖊𝖋𝖌𝖍𝖎𝖏𝖐𝖑𝖒𝖓𝖔𝖕𝖖𝖗𝖘𝖙𝖚𝖛𝖜𝖝𝖞𝖟', '𝟎𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗'],
+        script: ['𝓐𝓑𝓒𝓓𝓔𝓕𝓖𝓗𝓘𝓙𝓚𝓛𝓜𝓝𝓞𝓟𝓠𝓡𝓢𝓣𝓤𝓥𝓦𝓧𝓨𝓩', '𝓪𝓫𝓬𝓭𝓮𝓯𝓰𝓱𝓲𝓳𝓴𝓵𝓶𝓷𝓸𝓹𝓺𝓻𝓼𝓽𝓾𝓿𝔀𝔁𝔂𝔃', '0123456789'],
+        dbl: ['𝔸𝔹ℂ𝔻𝔼𝔽𝔾ℍ𝕀𝕁𝕂𝕃𝕄ℕ𝕆ℙℚℝ𝕊𝕋𝕌𝕍𝕎𝕏𝕐ℤ', '𝕒𝕓𝕔𝕕𝕖𝕗𝕘𝕙𝕚𝕛𝕜𝕝𝕞𝕟𝕠𝕡𝕢𝕣𝕤𝕥𝕦𝕧𝕨𝕩𝕪𝕫', '𝟘𝟙𝟚𝟛𝟜𝟝𝟞𝟟𝟠𝟡'],
+        mono: ['𝙰𝙱𝙲𝙳𝙴𝙵𝙶𝙷𝙸𝙹𝙺𝙻𝙼𝙽𝙾𝙿𝚀𝚁𝚂𝚃𝚄𝚅𝚆𝚇𝚈𝚉', '𝚊𝚋𝚌𝚍𝚎𝚏𝚐𝚑𝚒𝚓𝚔𝚕𝚖𝚗𝚘𝚙𝚚𝚛𝚜𝚝𝚞𝚟𝚠𝚡𝚢𝚣', '𝟶𝟷𝟸𝟹𝟺𝟻𝟼𝟽𝟾𝟿'],
+        circ: ['ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏ', 'ⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ', '⓪①②③④⑤⑥⑦⑧⑨'],
+        wide: ['ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ', 'ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ', '０１２３４５６７８９'],
+        sq: ['🅰🅱🅲🅳🅴🅵🅶🅷🅸🅹🅺🅻🅼🅽🅾🅿🆀🆁🆂🆃🆄🆅🆆🆇🆈🆉', '🅰🅱🅲🅳🅴🅵🅶🅷🅸🅹🅺🅻🅼🅽🅾🅿🆀🆁🆂🆃🆄🆅🆆🆇🆈🆉', '0123456789'],
+        sc: ['ᴀʙᴄᴅᴇꜰɢʜɪᴊᴋʟᴍɴᴏᴘǫʀsᴛᴜᴠᴡxʏᴢ', 'ᴀʙᴄᴅᴇꜰɢʜɪᴊᴋʟᴍɴᴏᴘǫʀsᴛᴜᴠᴡxʏᴢ', '0123456789']
+      };
+
+      const fontStyles = [
+        { n: 'Royal Wings VIP', fn: (t) => '꧁༺ ' + mapChars(t, ...F.fraktur) + ' ༻꧂' },
+        { n: 'Star Sparkle', fn: (t) => '★彡 ' + mapChars(t, ...F.script) + ' 彡★' },
+        { n: 'Royal Crown', fn: (t) => '👑 ' + mapChars(t, ...F.bold) + ' 👑' },
+        { n: 'Cyber Lightning', fn: (t) => '⚡ ' + mapChars(t, ...F.sans) + ' ⚡' },
+        { n: 'Mathematical Bold', fn: (t) => mapChars(t, ...F.bold) },
+        { n: 'Gothic Fraktur', fn: (t) => mapChars(t, ...F.fraktur) },
+        { n: 'Luxury Script', fn: (t) => mapChars(t, ...F.script) },
+        { n: 'Double-Struck Tech', fn: (t) => mapChars(t, ...F.dbl) },
+        { n: 'Hacker Monospace', fn: (t) => mapChars(t, ...F.mono) },
+        { n: 'Bubble Circled', fn: (t) => mapChars(t, ...F.circ) },
+        { n: 'Aesthetic Wide', fn: (t) => mapChars(t, ...F.wide) },
+        { n: 'Dark Block VIP', fn: (t) => mapChars(t, ...F.sq) },
+        { n: 'Minimal Small Caps', fn: (t) => '✦ ' + mapChars(t, ...F.sc) + ' ✦' },
+        { n: 'Fire Attitude', fn: (t) => '🔥『 ' + mapChars(t, ...F.bold) + ' 』🔥' },
+        { n: 'Diamond Elite', fn: (t) => '💎 ' + mapChars(t, ...F.dbl) + ' 💎' },
+        { n: 'Warrior Blade', fn: (t) => '⚔️ ' + mapChars(t, ...F.fraktur) + ' ⚔️' },
+        { n: 'Heart Magic', fn: (t) => '❤️✨ ' + mapChars(t, ...F.script) + ' ✨❤️' },
+        { n: 'Verified Boss', fn: (t) => '☑️ ' + mapChars(t, ...F.sans) + ' ☑️' }
+      ];
+
+      const bioTemplates = [
+        { tag: '👑 Royal Attitude Bio', txt: '👑 Official Account — {N}\n🔥 हमारा अंदाज़ अलग है, कॉपी करने से लेवल नहीं बनता\n⚡ Silent Work, Loud Success\n🚫 No Fake People | Only Real Vibes' },
+        { tag: '🚀 Hustler Motivation Bio', txt: '🚀 {N} | Future Visionary\n💻 खामोशी से मेहनत कर रहा हूँ, शोर मेरी कामयाबी मचाएगी\n📈 1% Better Every Single Day\n🙏 माता-पिता का सपना = मेरी मंज़िल' },
+        { tag: '🔥 Hindi Attitude Shayari', txt: 'हम वक्त के साथ शौक बदलते हैं, दोस्त नहीं…\nऔर जो हमें छोड़कर गए, अब वो हमारे नाम से जलते हैं! 🔥 — {N}' },
+        { tag: '💪 Motivational Shayari', txt: 'मंज़िलें उन्हीं को मिलती हैं जिनके सपनों में जान होती है,\nपंखों से कुछ नहीं होता साहब, हौसलों से उड़ान होती है! 🚀✨ — {N}' },
+        { tag: '✨ Aesthetic Instagram Bio', txt: '✦ {N} ✦\n🌙 Soft Heart • Strong Mind\n🎧 Music, Chai & Midnight Dreams\n✨ Creating my own sunshine every day' },
+        { tag: '👑 Royal Desi Swag', txt: '👑 देसी छोरा — {N}\n🇮🇳 मिट्टी से जुड़ा हूँ, पर सपने आसमान के हैं\n❤️ माँ-बाप की दुआ सबसे बड़ी दौलत\n🔥 Simple Living, Royal Thinking' },
+        { tag: '⚡ Killer Caption', txt: 'बात औकात की नहीं, जिगर की होती है साहब…\n{N} अकेला ही काफी है! ⚡😎' },
+        { tag: '🖤 Deep Success Quote', txt: 'आज जो लोग हँस रहे हैं, कल वही लोग तुम्हारी कहानी दूसरों को सुनाएँगे।\nबस रुकना मत! 🔥💪 — {N}' }
+      ];
+
+      function renderVipAll() {
+        const name = $('vipNameInput').value.trim() || 'Arman';
+
+        const fBox = $('subFontsBox');
+        fBox.innerHTML = '';
+        fontStyles.forEach((st) => {
+          const val = st.fn(name);
+          const card = document.createElement('div');
+          card.className = 'copy-card';
+          card.innerHTML = '<div style="min-width:0;"><div class="copy-label">' + st.n + '</div><div class="copy-preview"></div></div>';
+          card.querySelector('.copy-preview').textContent = val;
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'mini-copy-btn';
+          btn.textContent = '📋 Copy';
+          btn.addEventListener('click', () => {
+            copyText(val, '✨ स्टाइलिश नाम कॉपी हो गया!');
+            btn.textContent = '✅ Copied';
+            setTimeout(() => { btn.textContent = '📋 Copy'; }, 1200);
+          });
+          card.appendChild(btn);
+          fBox.appendChild(card);
+        });
+
+        const bBox = $('subBiosBox');
+        bBox.innerHTML = '';
+        bioTemplates.forEach((bt) => {
+          const val = bt.txt.replace(/\{N\}/g, name);
+          const card = document.createElement('div');
+          card.className = 'copy-card bio-card';
+          card.innerHTML = '<div class="copy-label">' + bt.tag + '</div><div class="copy-preview" style="font-size:13.5px;margin-bottom:10px;"></div>';
+          card.querySelector('.copy-preview').textContent = val;
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'mini-copy-btn';
+          btn.style.width = '100%';
+          btn.textContent = '📋 1-Click Copy';
+          btn.addEventListener('click', () => {
+            copyText(val, '🔥 VIP Bio / Shayari कॉपी हो गया!');
+            btn.textContent = '✅ कॉपी हो गया!';
+            setTimeout(() => { btn.textContent = '📋 1-Click Copy'; }, 1200);
+          });
+          card.appendChild(btn);
+          bBox.appendChild(card);
+        });
+      }
+
+      function switchNameSubtab(which) {
+        const isFonts = which === 'fonts';
+        $('subFontsBtn').classList.toggle('active', isFonts);
+        $('subBiosBtn').classList.toggle('active', !isFonts);
+        $('subFontsBox').style.display = isFonts ? 'grid' : 'none';
+        $('subBiosBox').style.display = isFonts ? 'none' : 'grid';
+      }
+
+      $('vipNameInput').addEventListener('input', renderVipAll);
+      $('subFontsBtn').addEventListener('click', () => switchNameSubtab('fonts'));
+      $('subBiosBtn').addEventListener('click', () => switchNameSubtab('bios'));
+      renderVipAll();
+
+      /* ======================== WEB AUDIO SYNTHESIZER ======================== */
+      let audioCtx = null;
+      let musicPlaying = false;
+      let musicTimer = null;
+      let noteIdx = 0;
+
+      function getCtx() {
+        try {
+          const AC = window.AudioContext || window.webkitAudioContext;
+          if (!AC) return null;
+          if (!audioCtx) audioCtx = new AC();
+          if (audioCtx.state === 'suspended') audioCtx.resume();
+          return audioCtx;
+        } catch (e) { return null; }
+      }
+
+      function playChime() {
+        const ctx = getCtx();
+        if (!ctx) return;
+        [523.25, 659.25, 783.99, 1046.5].forEach((f, i) => {
+          try {
+            const osc = ctx.createOscillator();
+            const g = ctx.createGain();
+            osc.type = 'sine';
+            osc.frequency.value = f;
+            const t = ctx.currentTime + i * 0.07;
+            g.gain.setValueAtTime(0.001, t);
+            g.gain.exponentialRampToValueAtTime(0.14, t + 0.02);
+            g.gain.exponentialRampToValueAtTime(0.001, t + 0.45);
+            osc.connect(g);
+            g.connect(ctx.destination);
+            osc.start(t);
+            osc.stop(t + 0.48);
+          } catch (e) {}
+        });
+      }
+
+      // Happy Birthday Melody (Hz, duration sec)
+      const melody = [
+        [261.6,0.28],[261.6,0.16],[293.7,0.42],[261.6,0.42],[349.2,0.42],[329.6,0.8],
+        [261.6,0.28],[261.6,0.16],[293.7,0.42],[261.6,0.42],[392.0,0.42],[349.2,0.8],
+        [261.6,0.28],[261.6,0.16],[523.3,0.42],[440.0,0.42],[349.2,0.42],[329.6,0.42],[293.7,0.7],
+        [466.2,0.28],[466.2,0.16],[440.0,0.42],[349.2,0.42],[392.0,0.42],[349.2,0.95]
+      ];
+
+      function stepMelody() {
+        if (!musicPlaying) return;
+        const ctx = getCtx();
+        if (!ctx) return;
+        const [freq, dur] = melody[noteIdx];
+        try {
+          const osc = ctx.createOscillator();
+          const g = ctx.createGain();
+          osc.type = 'triangle';
+          osc.frequency.value = freq;
+          const now = ctx.currentTime;
+          g.gain.setValueAtTime(0.001, now);
+          g.gain.exponentialRampToValueAtTime(0.18, now + 0.03);
+          g.gain.exponentialRampToValueAtTime(0.001, now + dur * 0.92);
+          osc.connect(g);
+          g.connect(ctx.destination);
+          osc.start(now);
+          osc.stop(now + dur);
+        } catch (e) {}
+        noteIdx = (noteIdx + 1) % melody.length;
+        musicTimer = setTimeout(stepMelody, dur * 1000 + (noteIdx === 0 ? 450 : 35));
+      }
+
+      function startMusic() {
+        if (musicPlaying) return;
+        if (!getCtx()) return;
+        musicPlaying = true;
+        noteIdx = 0;
+        $('bdayMusicBtn').textContent = '🔇 म्यूज़िक रोकें';
+        stepMelody();
+      }
+
+      function stopMusic() {
+        musicPlaying = false;
+        clearTimeout(musicTimer);
+        $('bdayMusicBtn').textContent = '🎵 बर्थडे म्यूज़िक बजाएँ';
+      }
+
+      /* ======================== TOOL 3: MAGIC BIRTHDAY WISH ======================== */
+      let bdayTheme = 'gold';
+      const themes = {
+        gold: { bg: 'radial-gradient(circle at top,#1e1b4b,#070714 65%)', colors: ['#fbbf24','#fde047','#f59e0b','#fffbeb','#fb923c'] },
+        neon: { bg: 'radial-gradient(circle at top,#17103c,#050614 65%)', colors: ['#06b6d4','#a855f7','#ec4899','#22d3ee','#38bdf8'] },
+        rose: { bg: 'radial-gradient(circle at top,#4c0519,#120309 65%)', colors: ['#fb7185','#f43f5e','#fda4af','#f472b6','#fde047'] }
+      };
+
+      document.querySelectorAll('#bdayThemeGrid .theme-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          bdayTheme = btn.dataset.theme;
+          document.querySelectorAll('#bdayThemeGrid .theme-btn').forEach((b) => {
+            b.classList.toggle('selected', b.dataset.theme === bdayTheme);
+          });
+        });
+      });
+
+      function getBdayInfo() {
+        return {
+          name: $('bdayNameInput').value.trim() || 'Dear Friend',
+          from: $('bdayFromInput').value.trim() || 'Arman',
+          theme: bdayTheme
+        };
+      }
+
+      function makeBdayUrl(info) {
+        const p = new URLSearchParams();
+        p.set('bday', info.name);
+        p.set('from', info.from);
+        p.set('theme', info.theme);
+        return getBaseUrl() + '?' + p.toString();
+      }
+
+      // Live Canvas Fireworks + Confetti Engine
+      const canvas = $('bdayCanvas');
+      const ctx2d = canvas.getContext('2d');
+      let animId = null, running = false, cw = 0, ch = 0, tick = 0;
+      let sparks = [], confetti = [], activeColors = themes.gold.colors;
+
+      function resizeCanvas() {
+        cw = window.innerWidth;
+        ch = window.innerHeight;
+        canvas.width = cw;
+        canvas.height = ch;
+      }
+
+      function burst(x, y, count) {
+        const c1 = activeColors[Math.floor(Math.random() * activeColors.length)];
+        const c2 = activeColors[Math.floor(Math.random() * activeColors.length)];
+        const n = count || 42;
+        for (let i = 0; i < n; i++) {
+          const ang = (Math.PI * 2 * i) / n + (Math.random() - 0.5) * 0.2;
+          const spd = 1.5 + Math.random() * 4.6;
+          sparks.push({
+            x, y, vx: Math.cos(ang) * spd, vy: Math.sin(ang) * spd,
+            a: 1, decay: 0.015 + Math.random() * 0.015,
+            r: 2 + Math.random() * 2.4, color: i % 2 ? c1 : c2
+          });
+        }
+      }
+
+      function initConfetti() {
+        confetti = [];
+        for (let i = 0; i < 40; i++) {
+          confetti.push({
+            x: Math.random() * cw, y: Math.random() * ch,
+            s: 5 + Math.random() * 5, vy: 1 + Math.random() * 1.8,
+            vx: (Math.random() - 0.5) * 0.8,
+            color: activeColors[i % activeColors.length]
+          });
+        }
+      }
+
+      function loopCanvas() {
+        if (!running) return;
+        ctx2d.fillStyle = 'rgba(5, 5, 15, 0.24)';
+        ctx2d.fillRect(0, 0, cw, ch);
+
+        tick++;
+        if (tick % 32 === 0) {
+          burst(cw * (0.15 + Math.random() * 0.7), ch * (0.14 + Math.random() * 0.35), 38);
+        }
+
+        for (let i = 0; i < confetti.length; i++) {
+          const c = confetti[i];
+          c.y += c.vy; c.x += c.vx;
+          if (c.y > ch + 10) { c.y = -10; c.x = Math.random() * cw; }
+          ctx2d.fillStyle = c.color;
+          ctx2d.fillRect(c.x, c.y, c.s, c.s * 1.4);
+        }
+
+        for (let i = sparks.length - 1; i >= 0; i--) {
+          const s = sparks[i];
+          s.vx *= 0.98; s.vy = s.vy * 0.98 + 0.05;
+          s.x += s.vx; s.y += s.vy; s.a -= s.decay;
+          if (s.a <= 0) { sparks.splice(i, 1); continue; }
+          ctx2d.globalAlpha = s.a;
+          ctx2d.fillStyle = s.color;
+          ctx2d.beginPath();
+          ctx2d.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+          ctx2d.fill();
+        }
+        ctx2d.globalAlpha = 1;
+        animId = requestAnimationFrame(loopCanvas);
+      }
+
+      function openBirthdayOverlay(info, autoAudio) {
+        const cfg = themes[info.theme] || themes.gold;
+        activeColors = cfg.colors;
+        $('bdayOverlay').style.background = cfg.bg;
+        $('bdayHeadline').textContent = 'Happy Birthday ' + info.name + '! 🎉';
+        $('bdayFromLabel').textContent = 'Best Wishes from ' + info.from + ' ❤️';
+
+        $('bdayOverlay').classList.add('open');
+        document.body.style.overflow = 'hidden';
+
+        resizeCanvas();
+        ctx2d.clearRect(0, 0, cw, ch);
+        sparks = [];
+        initConfetti();
+        burst(cw * 0.3, ch * 0.25, 48);
+        setTimeout(() => burst(cw * 0.7, ch * 0.22, 48), 260);
+        setTimeout(() => burst(cw * 0.5, ch * 0.18, 56), 540);
+
+        running = true;
+        cancelAnimationFrame(animId);
+        loopCanvas();
+        if (autoAudio) startMusic();
+      }
+
+      function closeBirthdayOverlay(goCreator) {
+        running = false;
+        cancelAnimationFrame(animId);
+        stopMusic();
+        $('bdayOverlay').classList.remove('open');
+        document.body.style.overflow = '';
+        try {
+          if (location.search.indexOf('bday=') > -1) {
+            history.replaceState({}, document.title, location.pathname);
+          }
+        } catch (e) {}
+        if (goCreator) openTool('birthday', true);
+      }
+
+      $('bdayOverlay').addEventListener('pointerdown', (e) => {
+        if (e.target.closest('button')) return;
+        burst(e.clientX, e.clientY, 44);
+      });
+
+      $('bdayCake').addEventListener('click', (e) => {
+        e.stopPropagation();
+        const r = e.currentTarget.getBoundingClientRect();
+        burst(r.left + r.width / 2, r.top + 20, 62);
+        playChime();
+      });
+
+      $('bdayMusicBtn').addEventListener('click', () => (musicPlaying ? stopMusic() : startMusic()));
+      $('bdayCloseBtn').addEventListener('click', () => closeBirthdayOverlay(false));
+      $('bdayMakeOwnBtn').addEventListener('click', () => closeBirthdayOverlay(true));
+      window.addEventListener('resize', () => { if (running) resizeCanvas(); });
+
+      $('liveBdayBtn').addEventListener('click', () => openBirthdayOverlay(getBdayInfo(), true));
+      $('copyBdayBtn').addEventListener('click', () => copyText(makeBdayUrl(getBdayInfo()), '🔗 Magic Birthday Link कॉपी हो गया!'));
+      $('waBdayBtn').addEventListener('click', () => {
+        const info = getBdayInfo();
+        const link = makeBdayUrl(info);
+        const msg = '🎉✨ *' + info.name + '*, आपके लिए एक खास बर्थडे सरप्राइज़ है! 🎂🎆\n\nनीचे लिंक खोलकर आतिशबाज़ी और म्यूज़िक देखें 👇\n' + link + '\n\n— *' + info.from + '* ❤️';
+        window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+      });
+
+      /* ======================== THANK YOU & FOOTER SHARE ======================== */
+      $('thankBtn').addEventListener('click', () => {
+        const btn = $('thankBtn');
+        const r = btn.getBoundingClientRect();
+        const ox = r.left + r.width / 2, oy = r.top + r.height / 2;
+        const icons = ['❤️', '✨', '🌟', '💖', '🎉', '💫'];
+        for (let i = 0; i < 22; i++) {
+          const sp = document.createElement('span');
+          sp.className = 'burst-item';
+          sp.textContent = icons[i % icons.length];
+          sp.style.left = ox + 'px';
+          sp.style.top = oy + 'px';
+          const ang = Math.random() * Math.PI * 2;
+          const dist = 60 + Math.random() * 140;
+          sp.style.setProperty('--tx', Math.cos(ang) * dist + 'px');
+          sp.style.setProperty('--ty', Math.sin(ang) * dist - 50 + 'px');
+          sp.style.setProperty('--rot', (Math.random() - 0.5) * 300 + 'deg');
+          document.body.appendChild(sp);
+          setTimeout(() => sp.remove(), 1250);
+        }
+        playChime();
+        btn.textContent = 'शुक्रिया दोस्त! आप हमारे लिए बहुत खास हैं ✨';
+        showToast('❤️ दिल से शुक्रिया!');
+      });
+
+      $('shareAppBtn').addEventListener('click', () => {
+        const msg = '🔥 कमाल की 100% फ्री वेबसाइट — *Arman AI Official*! ✨\n🤖 Magic AI Prompt\n✨ VIP Name & Instagram Bio\n🎂 आतिशबाज़ी वाला Birthday Wish Link\n\nअभी ट्राई करें 👇\n' + getBaseUrl();
+        window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+      });
+
+      /* ======================== INITIALIZATION & URL CHECK ======================== */
+      try {
+        const params = new URLSearchParams(location.search);
+        const bdayParam = params.get('bday');
+        if (bdayParam) {
+          const personName = (bdayParam === '1' && params.get('to')) ? params.get('to') : bdayParam;
+          openBirthdayOverlay({
+            name: personName,
+            from: params.get('from') || 'Your Friend',
+            theme: params.get('theme') || 'gold'
+          }, false);
+          return;
+        }
+      } catch (e) {}
+
+      showWelcome();
+    })();
+  </script>
+</body>
+</html>
